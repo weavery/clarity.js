@@ -1,0 +1,33 @@
+{
+  "name": "clarity.js",
+  "version": "0.0.0",
+  "description": "Clarity runtime for JavaScript.",
+  "type": "module",
+  "module": "clarity.js",
+  "types": "clarity.d.ts",
+  "files": [
+    "AUTHORS",
+    "CHANGES.md",
+    "CREDITS.md",
+    "README.md",
+    "UNLICENSE",
+    "VERSION",
+    "package.json",
+    "clarity.js",
+    "clarity.d.ts"
+  ],
+  "scripts": {},
+  "keywords": [
+    "clarity",
+    "smart contract",
+    "smartweave",
+    "arweave",
+    "blockstack"
+  ],
+  "author": "Arto Bendiken <arto@bendiken.net> (https://ar.to)",
+  "license": "Unlicense",
+  "homepage": "https://github.com/weavery/clarity.js",
+  "bugs": "https://github.com/weavery/clarity.js/issues",
+  "repository": "https://github.com/weavery/clarity.js.git",
+  "devDependencies": {}
+}
