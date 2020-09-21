@@ -5,6 +5,12 @@ export function requireVersion(version) {
 export function requireFeature(feature) {
     // TODO: throw an error if the version isn't supported
 }
+export function block_height() {
+    return 0; // TODO
+}
+export function contract_caller() {
+    return ""; // TODO
+}
 export function hash160(value) {
     return new ArrayBuffer(20); // TODO
 }
@@ -19,4 +25,7 @@ export function sha512(value) {
 }
 export function sha512_256(value) {
     return new ArrayBuffer(32); // TODO
+}
+export function tx_sender() {
+    return ""; // TODO
 }

@@ -8,6 +8,14 @@ export function requireFeature(feature: string): void {
   // TODO: throw an error if the version isn't supported
 }
 
+export function block_height(): number {
+  return 0; // TODO
+}
+
+export function contract_caller(): string {
+  return ""; // TODO
+}
+
 export function hash160(value: number | string | ArrayBuffer): ArrayBuffer {
   return new ArrayBuffer(20); // TODO
 }
@@ -26,4 +34,8 @@ export function sha512(value: number | string | ArrayBuffer): ArrayBuffer {
 
 export function sha512_256(value: number | string | ArrayBuffer): ArrayBuffer {
   return new ArrayBuffer(32); // TODO
+}
+
+export function tx_sender(): string {
+  return ""; // TODO
 }
