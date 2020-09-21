@@ -1,7 +1,7 @@
 {
-  "name": "clarity.js",
+  "name": "@weavery/clarity",
   "version": "0.0.0",
-  "description": "Clarity runtime for JavaScript.",
+  "description": "Clarity smart contract runtime for JavaScript.",
   "type": "module",
   "module": "clarity.js",
   "types": "clarity.d.ts",
