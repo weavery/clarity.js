@@ -5,9 +5,15 @@
 
 ## Status
 
+### Mapping of Clarity types
+
+Clarity | Type | TypeScript | JavaScript | Notes
+------- | ---- | ---------- | ---------- | -----
+[`err`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | class | `Err<T>` | `Err` |
+
 ### Supported Clarity features
 
-Feature | Type | TypeScript | Status | Notes
+Clarity | Type | TypeScript | Status | Notes
 ------- | ---- | ---------- | ------ | -----
 [`as-contract`](https://docs.blockstack.org/references/language-clarity#as-contract) | syntax | `asContract<A>()` | 🚧 |
 [`at-block`](https://docs.blockstack.org/references/language-clarity#at-block) | syntax | `atBlock<A>()` | 🚧 |
@@ -15,6 +21,7 @@ Feature | Type | TypeScript | Status | Notes
 [`contract-call?`](https://docs.blockstack.org/references/language-clarity#contract-call) | function | `contractCall<A, B>()` | 🚧 |
 [`contract-caller`](https://docs.blockstack.org/references/language-clarity#contract-caller) | keyword | `contractCaller()` | 🚧 |
 [`contract-of`](https://docs.blockstack.org/references/language-clarity#contract-of) | function | `contractOf()` | 🚧 |
+[`err`](https://docs.blockstack.org/references/language-clarity#err) | function | `err<T()` | ✅ |
 [`ft-get-balance`](https://docs.blockstack.org/references/language-clarity#ft-get-balance) | function | `ftGetBalance()` | 🚧 |
 [`ft-mint?`](https://docs.blockstack.org/references/language-clarity#ft-mint) | function | `ftMint()` | 🚧 |
 [`ft-transfer?`](https://docs.blockstack.org/references/language-clarity#ft-transfer) | function | `ftTransfer()` | 🚧 |

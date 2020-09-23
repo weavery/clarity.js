@@ -6,9 +6,19 @@ type expr<A> = () => A
 type int = number
 type optional<T> = T | null
 type principal = string
-type response<T, E> = T | E | null  // TODO
+type err<E> = Err<E>
+type response<T, E> = T | err<E>
 type trait = string
 type uint = number
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#clarity-type-system
+ */
+export class Err<T> extends Error {
+  public constructor(value: T) {
+    super("")  // TODO
+  }
+}
 
 export function requireVersion(version: string): void {
   // TODO: throw an error if the version isn't supported
@@ -43,7 +53,7 @@ export function blockHeight(): uint {
  * @link https://docs.blockstack.org/references/language-clarity#contract-call
  */
 export function contractCall<A, B>(contractName: trait, functionName: string, ...args: any): response<A, B> {
-  return null; // TODO
+  return err(null); // TODO
 }
 
 /**
@@ -61,6 +71,13 @@ export function contractOf(contractName: trait): principal {
 }
 
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#err
+ */
+export function err<T>(value: T) {
+  return new Err(value);
+}
+
+/**
  * @link https://docs.blockstack.org/references/language-clarity#ft-get-balance
  */
 export function ftGetBalance(tokenName: string, principal: principal): uint {
@@ -71,14 +88,14 @@ export function ftGetBalance(tokenName: string, principal: principal): uint {
  * @link https://docs.blockstack.org/references/language-clarity#ft-mint
  */
 export function ftMint(tokenName: string, amount: uint, recipient: principal): response<bool, uint> {
-  return null; // TODO
+  return err(null); // TODO
 }
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#ft-transfer
  */
 export function ftTransfer(tokenName: string, amount: uint, sender: principal, recipient: principal): response<bool, uint> {
-  return null; // TODO
+  return err(null); // TODO
 }
 
 /**
@@ -113,14 +130,14 @@ export function nftGetOwner(assetClass: string, assetID: string): optional<princ
  * @link https://docs.blockstack.org/references/language-clarity#nft-mint
  */
 export function nftMint(assetClass: string, assetID: string, recipient: principal): response<bool, uint> {
-  return null; // TODO
+  return err(null); // TODO
 }
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#nft-transfer
  */
 export function nftTransfer(assetClass: string, assetID: string, sender: principal, recipient: principal): response<bool, uint> {
-  return null; // TODO
+  return err(null); // TODO
 }
 
 /**

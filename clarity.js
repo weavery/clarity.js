@@ -1,4 +1,12 @@
 /* This is free and unencumbered software released into the public domain. */
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#clarity-type-system
+ */
+export class Err extends Error {
+    constructor(value) {
+        super(""); // TODO
+    }
+}
 export function requireVersion(version) {
     // TODO: throw an error if the version isn't supported
 }
@@ -27,7 +35,7 @@ export function blockHeight() {
  * @link https://docs.blockstack.org/references/language-clarity#contract-call
  */
 export function contractCall(contractName, functionName, ...args) {
-    return null; // TODO
+    return err(null); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#contract-caller
@@ -42,6 +50,12 @@ export function contractOf(contractName) {
     return ""; // TODO
 }
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#err
+ */
+export function err(value) {
+    return new Err(value);
+}
+/**
  * @link https://docs.blockstack.org/references/language-clarity#ft-get-balance
  */
 export function ftGetBalance(tokenName, principal) {
@@ -51,13 +65,13 @@ export function ftGetBalance(tokenName, principal) {
  * @link https://docs.blockstack.org/references/language-clarity#ft-mint
  */
 export function ftMint(tokenName, amount, recipient) {
-    return null; // TODO
+    return err(null); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#ft-transfer
  */
 export function ftTransfer(tokenName, amount, sender, recipient) {
-    return null; // TODO
+    return err(null); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#get-block-info
@@ -87,13 +101,13 @@ export function nftGetOwner(assetClass, assetID) {
  * @link https://docs.blockstack.org/references/language-clarity#nft-mint
  */
 export function nftMint(assetClass, assetID, recipient) {
-    return null; // TODO
+    return err(null); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#nft-transfer
  */
 export function nftTransfer(assetClass, assetID, sender, recipient) {
-    return null; // TODO
+    return err(null); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#sha256

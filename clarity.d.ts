@@ -4,9 +4,16 @@ declare type expr<A> = () => A;
 declare type int = number;
 declare type optional<T> = T | null;
 declare type principal = string;
-declare type response<T, E> = T | E | null;
+declare type err<E> = Err<E>;
+declare type response<T, E> = T | err<E>;
 declare type trait = string;
 declare type uint = number;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#clarity-type-system
+ */
+export declare class Err<T> extends Error {
+    constructor(value: T);
+}
 export declare function requireVersion(version: string): void;
 export declare function requireFeature(feature: string): void;
 /**
@@ -33,6 +40,10 @@ export declare function contractCaller(): principal;
  * @link https://docs.blockstack.org/references/language-clarity#contract-of
  */
 export declare function contractOf(contractName: trait): principal;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#err
+ */
+export declare function err<T>(value: T): Err<T>;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#ft-get-balance
  */
