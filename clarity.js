@@ -69,6 +69,18 @@ export function err(value) {
     return new Err(value);
 }
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#filter
+ */
+export function filter(func, list) {
+    return null; // TODO
+}
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#fold
+ */
+export function fold(func, list, initialValue) {
+    return initialValue; // TODO
+}
+/**
  * @link https://docs.blockstack.org/references/language-clarity#ft-get-balance
  */
 export function ftGetBalance(tokenName, principal) {
@@ -103,6 +115,12 @@ export function hash160(value) {
  */
 export function keccak256(value) {
     return new ArrayBuffer(32); // TODO
+}
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#map
+ */
+export function map(func, list) {
+    return null; // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#nft-get-owner

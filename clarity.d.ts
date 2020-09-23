@@ -54,6 +54,14 @@ export declare function contractOf(contractName: trait): principal;
  */
 export declare function err<T>(value: T): Err<T>;
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#filter
+ */
+export declare function filter<A>(func: (a: A) => bool, list: list<A>): list<A> | null;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#fold
+ */
+export declare function fold<A, B>(func: (a: A, b: B) => B, list: list<A>, initialValue: B): B;
+/**
  * @link https://docs.blockstack.org/references/language-clarity#ft-get-balance
  */
 export declare function ftGetBalance(tokenName: string, principal: principal): uint;
@@ -77,6 +85,10 @@ export declare function hash160(value: buff | uint | int): buff;
  * @link https://docs.blockstack.org/references/language-clarity#keccak256
  */
 export declare function keccak256(value: buff | uint | int): buff;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#map
+ */
+export declare function map<A, B>(func: (a: A) => B, list: list<A>): list<B> | null;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#nft-get-owner
  */

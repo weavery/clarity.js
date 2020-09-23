@@ -94,6 +94,20 @@ export function err<T>(value: T) {
 }
 
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#filter
+ */
+export function filter<A>(func: (a: A) => bool, list: list<A>): list<A> | null {
+  return null  // TODO
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#fold
+ */
+export function fold<A, B>(func: (a: A, b: B) => B, list: list<A>, initialValue: B): B {
+  return initialValue  // TODO
+}
+
+/**
  * @link https://docs.blockstack.org/references/language-clarity#ft-get-balance
  */
 export function ftGetBalance(tokenName: string, principal: principal): uint {
@@ -133,6 +147,13 @@ export function hash160(value: buff | uint | int): buff {
  */
 export function keccak256(value: buff | uint | int): buff {
   return new ArrayBuffer(32)  // TODO
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#map
+ */
+export function map<A, B>(func: (a: A) => B, list: list<A>): list<B> | null {
+  return null  // TODO
 }
 
 /**

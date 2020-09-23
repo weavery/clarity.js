@@ -24,12 +24,15 @@ Clarity | Type | TypeScript | Status | Notes
 [`contract-caller`](https://docs.blockstack.org/references/language-clarity#contract-caller) | keyword | `contractCaller()` | 🚧 |
 [`contract-of`](https://docs.blockstack.org/references/language-clarity#contract-of) | function | `contractOf()` | 🚧 |
 [`err`](https://docs.blockstack.org/references/language-clarity#err) | function | `err<T()` | ✅ |
+[`filter`](https://docs.blockstack.org/references/language-clarity#filter) | function | `filter<A>()` | 🚧 |
+[`fold`](https://docs.blockstack.org/references/language-clarity#fold) | function | `fold<A, B>()`  | 🚧 |
 [`ft-get-balance`](https://docs.blockstack.org/references/language-clarity#ft-get-balance) | function | `ftGetBalance()` | 🚧 |
 [`ft-mint?`](https://docs.blockstack.org/references/language-clarity#ft-mint) | function | `ftMint()` | 🚧 |
 [`ft-transfer?`](https://docs.blockstack.org/references/language-clarity#ft-transfer) | function | `ftTransfer()` | 🚧 |
 [`get-block-info?`](https://docs.blockstack.org/references/language-clarity#get-block-info) | function | `getBlockInfo()` | 🚧 |
 [`hash160`](https://docs.blockstack.org/references/language-clarity#hash160) | function | `hash160()` | 🚧 |
 [`keccak256`](https://docs.blockstack.org/references/language-clarity#keccak256) | function | `keccak256()` | 🚧 |
+[`map`](https://docs.blockstack.org/references/language-clarity#map) | function | `map<A, B>()` | 🚧 |
 [`nft-get-owner?`](https://docs.blockstack.org/references/language-clarity#nft-get-owner) | function | `nftGetOwner()` | 🚧 |
 [`nft-mint?`](https://docs.blockstack.org/references/language-clarity#nft-mint) | function | `nftMint()` | 🚧 |
 [`nft-transfer?`](https://docs.blockstack.org/references/language-clarity#nft-transfer) | function | `nftTransfer()` | 🚧 |
