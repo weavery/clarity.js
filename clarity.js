@@ -62,7 +62,7 @@ export function ftTransfer(tokenName, amount, sender, recipient) {
 /**
  * @link https://docs.blockstack.org/references/language-clarity#get-block-info
  */
-export function getBlockInfo(propName, blockHeightExpr) {
+export function getBlockInfo(propName, blockHeight) {
     return null; // TODO
 }
 /**

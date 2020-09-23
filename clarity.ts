@@ -56,7 +56,7 @@ export function contractCaller(): principal {
 /**
  * @link https://docs.blockstack.org/references/language-clarity#contract-of
  */
-export function contractOf(contractName: trait): string {
+export function contractOf(contractName: trait): principal {
   return ""; // TODO
 }
 
@@ -84,7 +84,7 @@ export function ftTransfer(tokenName: string, amount: uint, sender: principal, r
 /**
  * @link https://docs.blockstack.org/references/language-clarity#get-block-info
  */
-export function getBlockInfo(propName: string, blockHeightExpr: expr<uint>): optional<buff> | optional<uint> {
+export function getBlockInfo(propName: string, blockHeight: uint): optional<buff> | optional<uint> {
   return null; // TODO
 }
 

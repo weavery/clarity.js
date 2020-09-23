@@ -32,7 +32,7 @@ export declare function contractCaller(): principal;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#contract-of
  */
-export declare function contractOf(contractName: trait): string;
+export declare function contractOf(contractName: trait): principal;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#ft-get-balance
  */
@@ -48,7 +48,7 @@ export declare function ftTransfer(tokenName: string, amount: uint, sender: prin
 /**
  * @link https://docs.blockstack.org/references/language-clarity#get-block-info
  */
-export declare function getBlockInfo(propName: string, blockHeightExpr: expr<uint>): optional<buff> | optional<uint>;
+export declare function getBlockInfo(propName: string, blockHeight: uint): optional<buff> | optional<uint>;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#hash160
  */
