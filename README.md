@@ -34,6 +34,7 @@ Clarity | Type | TypeScript | Status | Notes
 [`sha256`](https://docs.blockstack.org/references/language-clarity#sha256) | function | `sha256()` | 🚧 |
 [`sha512`](https://docs.blockstack.org/references/language-clarity#sha512) | function | `sha512()` | 🚧 |
 [`sha512/256`](https://docs.blockstack.org/references/language-clarity#sha512256) | function | `sha512_256()` | 🚧 |
+[`try!`](https://docs.blockstack.org/references/language-clarity#try) | function | `tryUnwrap<A, B>()` | 🚧 |
 [`tx-sender`](https://docs.blockstack.org/references/language-clarity#tx-sender) | keyword | `txSender()` | 🚧 |
 [`unwrap!`](https://docs.blockstack.org/references/language-clarity#unwrap) | function | `unwrap<A, B>()` | 🚧 |
 [`unwrap-err!`](https://docs.blockstack.org/references/language-clarity#unwrap-err) | function | `unwrapErr<A, B>()` | 🚧 |

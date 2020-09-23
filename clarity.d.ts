@@ -93,6 +93,10 @@ export declare function sha512(value: buff | uint | int): buff;
  */
 export declare function sha512_256(value: buff | uint | int): buff;
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#try
+ */
+export declare function tryUnwrap<A, B>(optionInput: optional<A> | response<A, B>): A;
+/**
  * @link https://docs.blockstack.org/references/language-clarity#tx-sender
  */
 export declare function txSender(): principal;

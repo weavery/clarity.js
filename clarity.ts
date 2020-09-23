@@ -162,6 +162,13 @@ export function sha512_256(value: buff | uint | int): buff {
 }
 
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#try
+ */
+export function tryUnwrap<A, B>(optionInput: optional<A> | response<A, B>): A {
+  throw new Error("not implemented yet");  // TODO
+}
+
+/**
  * @link https://docs.blockstack.org/references/language-clarity#tx-sender
  */
 export function txSender(): principal {

@@ -128,6 +128,12 @@ export function sha512_256(value) {
     return new ArrayBuffer(32); // TODO
 }
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#try
+ */
+export function tryUnwrap(optionInput) {
+    throw new Error("not implemented yet"); // TODO
+}
+/**
  * @link https://docs.blockstack.org/references/language-clarity#tx-sender
  */
 export function txSender() {
