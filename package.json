@@ -16,7 +16,9 @@
     "clarity.js",
     "clarity.d.ts"
   ],
-  "scripts": {},
+  "scripts": {
+    "test": "jest"
+  },
   "keywords": [
     "clarity",
     "smart contract",
@@ -29,5 +31,10 @@
   "homepage": "https://github.com/weavery/clarity.js",
   "bugs": "https://github.com/weavery/clarity.js/issues",
   "repository": "https://github.com/weavery/clarity.js.git",
-  "devDependencies": {}
+  "devDependencies": {
+    "jest": "^26.4.2"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
 }
