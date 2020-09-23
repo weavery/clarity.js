@@ -18,7 +18,7 @@ export function requireFeature(feature) {
  * @link https://docs.blockstack.org/references/language-clarity#append
  */
 export function append(list, value) {
-    return list; // TODO
+    return [...list, value];
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#as-contract
@@ -42,7 +42,11 @@ export function blockHeight() {
  * @link https://docs.blockstack.org/references/language-clarity#concat
  */
 export function concat(a, b) {
-    return a; // TODO
+    if (a instanceof Array && b instanceof Array) {
+        return [].concat(a, b);
+    }
+    // TODO: buff
+    throw new TypeError();
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#contract-call

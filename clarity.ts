@@ -34,7 +34,7 @@ export function requireFeature(feature: string): void {
  * @link https://docs.blockstack.org/references/language-clarity#append
  */
 export function append<T>(list: list<T>, value: T): list<T> {
-  return list  // TODO
+  return [...list, value]
 }
 
 /**
@@ -62,7 +62,11 @@ export function blockHeight(): uint {
  * @link https://docs.blockstack.org/references/language-clarity#concat
  */
 export function concat<T>(a: list<T> | buff, b: list<T> | buff): list<T> | buff {
-  return a  // TODO
+  if (a instanceof Array && b instanceof Array) {
+    return ([] as list<T>).concat(a, b)
+  }
+  // TODO: buff
+  throw new TypeError();
 }
 
 /**
