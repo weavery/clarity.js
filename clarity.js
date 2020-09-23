@@ -5,6 +5,7 @@
 export class Err extends Error {
     constructor(value) {
         super(""); // TODO
+        Object.setPrototypeOf(this, Err.prototype);
     }
 }
 export function requireVersion(version) {

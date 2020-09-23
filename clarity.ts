@@ -17,6 +17,7 @@ type uint = number
 export class Err<T> extends Error {
   public constructor(value: T) {
     super("")  // TODO
+    Object.setPrototypeOf(this, Err.prototype)
   }
 }
 
