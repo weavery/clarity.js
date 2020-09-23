@@ -129,6 +129,18 @@ export function sha512_256(value) {
     return new ArrayBuffer(32); // TODO
 }
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#to-int
+ */
+export function toInt(value) {
+    return value; // TODO
+}
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#to-uint
+ */
+export function toUint(value) {
+    return value; // TODO
+}
+/**
  * @link https://docs.blockstack.org/references/language-clarity#try
  */
 export function tryUnwrap(optionInput) {

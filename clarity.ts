@@ -163,6 +163,20 @@ export function sha512_256(value: buff | uint | int): buff {
 }
 
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#to-int
+ */
+export function toInt(value: uint): int {
+  return value // TODO
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#to-uint
+ */
+export function toUint(value: int): uint {
+  return value // TODO
+}
+
+/**
  * @link https://docs.blockstack.org/references/language-clarity#try
  */
 export function tryUnwrap<A, B>(optionInput: optional<A> | response<A, B>): A {

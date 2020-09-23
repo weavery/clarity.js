@@ -93,6 +93,14 @@ export declare function sha512(value: buff | uint | int): buff;
  */
 export declare function sha512_256(value: buff | uint | int): buff;
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#to-int
+ */
+export declare function toInt(value: uint): int;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#to-uint
+ */
+export declare function toUint(value: int): uint;
+/**
  * @link https://docs.blockstack.org/references/language-clarity#try
  */
 export declare function tryUnwrap<A, B>(optionInput: optional<A> | response<A, B>): A;
