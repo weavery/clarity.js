@@ -15,6 +15,12 @@ export function requireFeature(feature) {
     // TODO: throw an error if the feature isn't supported
 }
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#append
+ */
+export function append(list, value) {
+    return list; // TODO
+}
+/**
  * @link https://docs.blockstack.org/references/language-clarity#as-contract
  */
 export function asContract(expr) {
@@ -31,6 +37,12 @@ export function atBlock(blockHash, expr) {
  */
 export function blockHeight() {
     return 0; // TODO
+}
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#concat
+ */
+export function concat(a, b) {
+    return a; // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#contract-call

@@ -1,10 +1,11 @@
 declare type bool = boolean;
 declare type buff = ArrayBuffer;
-declare type expr<A> = () => A;
+declare type expr<T> = () => T;
 declare type int = number;
+declare type list<E> = Array<E>;
 declare type optional<T> = T | null;
 declare type principal = string;
-declare type err<E> = Err<E>;
+declare type err<T> = Err<T>;
 declare type response<T, E> = T | err<E>;
 declare type trait = string;
 declare type uint = number;
@@ -17,6 +18,10 @@ export declare class Err<T> extends Error {
 export declare function requireVersion(version: string): void;
 export declare function requireFeature(feature: string): void;
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#append
+ */
+export declare function append<T>(list: list<T>, value: T): list<T>;
+/**
  * @link https://docs.blockstack.org/references/language-clarity#as-contract
  */
 export declare function asContract<A>(expr: expr<A>): A;
@@ -28,6 +33,10 @@ export declare function atBlock<A>(blockHash: buff, expr: expr<A>): A;
  * @link https://docs.blockstack.org/references/language-clarity#block-height
  */
 export declare function blockHeight(): uint;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#concat
+ */
+export declare function concat<T>(a: list<T> | buff, b: list<T> | buff): list<T> | buff;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#contract-call
  */

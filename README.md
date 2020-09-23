@@ -15,9 +15,11 @@ Clarity | Type | TypeScript | JavaScript | Notes
 
 Clarity | Type | TypeScript | Status | Notes
 ------- | ---- | ---------- | ------ | -----
+[`append`](https://docs.blockstack.org/references/language-clarity#append) | function | `append()` | 🚧 |
 [`as-contract`](https://docs.blockstack.org/references/language-clarity#as-contract) | syntax | `asContract<A>()` | 🚧 |
 [`at-block`](https://docs.blockstack.org/references/language-clarity#at-block) | syntax | `atBlock<A>()` | 🚧 |
 [`block-height`](https://docs.blockstack.org/references/language-clarity#block-height) | keyword | `blockHeight()` | 🚧 |
+[`concat`](https://docs.blockstack.org/references/language-clarity#concat) | function | `concat()` | 🚧 |
 [`contract-call?`](https://docs.blockstack.org/references/language-clarity#contract-call) | function | `contractCall<A, B>()` | 🚧 |
 [`contract-caller`](https://docs.blockstack.org/references/language-clarity#contract-caller) | keyword | `contractCaller()` | 🚧 |
 [`contract-of`](https://docs.blockstack.org/references/language-clarity#contract-of) | function | `contractOf()` | 🚧 |
