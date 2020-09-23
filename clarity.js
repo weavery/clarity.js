@@ -133,3 +133,27 @@ export function sha512_256(value) {
 export function txSender() {
     return ""; // TODO
 }
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#unwrap
+ */
+export function unwrap(optionInput, thrownValue) {
+    return thrownValue; // TODO
+}
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#unwrap-err
+ */
+export function unwrapErr(responseInput, thrownValue) {
+    return thrownValue; // TODO
+}
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#unwrap-err-panic
+ */
+export function unwrapErrPanic(responseInput) {
+    throw new Error("not implemented yet"); // TODO
+}
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#unwrap-panic
+ */
+export function unwrapPanic(optionInput) {
+    throw new Error("not implemented yet"); // TODO
+}

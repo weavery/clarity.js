@@ -167,3 +167,31 @@ export function sha512_256(value: buff | uint | int): buff {
 export function txSender(): principal {
   return ""; // TODO
 }
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#unwrap
+ */
+export function unwrap<A, B>(optionInput: optional<A> | response<A, B>, thrownValue: A): A {
+  return thrownValue;  // TODO
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#unwrap-err
+ */
+export function unwrapErr<A, B>(responseInput: response<A, B>, thrownValue: B): B {
+  return thrownValue;  // TODO
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#unwrap-err-panic
+ */
+export function unwrapErrPanic<A, B>(responseInput: response<A, B>): B {
+  throw new Error("not implemented yet");  // TODO
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#unwrap-panic
+ */
+export function unwrapPanic<A, B>(optionInput: optional<A> | response<A, B>): A {
+  throw new Error("not implemented yet");  // TODO
+}

@@ -96,4 +96,20 @@ export declare function sha512_256(value: buff | uint | int): buff;
  * @link https://docs.blockstack.org/references/language-clarity#tx-sender
  */
 export declare function txSender(): principal;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#unwrap
+ */
+export declare function unwrap<A, B>(optionInput: optional<A> | response<A, B>, thrownValue: A): A;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#unwrap-err
+ */
+export declare function unwrapErr<A, B>(responseInput: response<A, B>, thrownValue: B): B;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#unwrap-err-panic
+ */
+export declare function unwrapErrPanic<A, B>(responseInput: response<A, B>): B;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#unwrap-panic
+ */
+export declare function unwrapPanic<A, B>(optionInput: optional<A> | response<A, B>): A;
 export {};

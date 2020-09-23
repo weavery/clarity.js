@@ -35,3 +35,7 @@ Clarity | Type | TypeScript | Status | Notes
 [`sha512`](https://docs.blockstack.org/references/language-clarity#sha512) | function | `sha512()` | 🚧 |
 [`sha512/256`](https://docs.blockstack.org/references/language-clarity#sha512256) | function | `sha512_256()` | 🚧 |
 [`tx-sender`](https://docs.blockstack.org/references/language-clarity#tx-sender) | keyword | `txSender()` | 🚧 |
+[`unwrap!`](https://docs.blockstack.org/references/language-clarity#unwrap) | function | `unwrap<A, B>()` | 🚧 |
+[`unwrap-err!`](https://docs.blockstack.org/references/language-clarity#unwrap-err) | function | `unwrapErr<A, B>()` | 🚧 |
+[`unwrap-err-panic`](https://docs.blockstack.org/references/language-clarity#unwrap-err-panic) | function | `unwrapErrPanic<A, B>()` | 🚧 |
+[`unwrap-panic`](https://docs.blockstack.org/references/language-clarity#unwrap-panic) | function | `unwrapPanic<A, B>()` | 🚧 |
