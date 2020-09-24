@@ -1,5 +1,5 @@
 declare type bool = boolean;
-declare type buff = ArrayBuffer;
+declare type buff = Uint8Array;
 declare type expr<T> = () => T;
 declare type int = number;
 declare type list<E> = Array<E>;

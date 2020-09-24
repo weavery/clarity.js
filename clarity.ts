@@ -1,7 +1,7 @@
 /* This is free and unencumbered software released into the public domain. */
 
 type bool = boolean
-type buff = ArrayBuffer
+type buff = Uint8Array
 type expr<T> = () => T
 type int = number
 type list<E> = Array<E>
@@ -65,7 +65,12 @@ export function concat<T>(a: list<T> | buff, b: list<T> | buff): list<T> | buff 
   if (a instanceof Array && b instanceof Array) {
     return ([] as list<T>).concat(a, b)
   }
-  // TODO: buff
+  if (a instanceof Uint8Array && b instanceof Uint8Array) {
+    const result = new Uint8Array(a.byteLength + b.byteLength)
+    result.set(a, 0)
+    result.set(b, a.byteLength)
+    return result
+  }
   throw new TypeError();
 }
 
@@ -143,14 +148,14 @@ export function getBlockInfo(propName: string, blockHeight: uint): optional<buff
  * @link https://docs.blockstack.org/references/language-clarity#hash160
  */
 export function hash160(value: buff | uint | int): buff {
-  return new ArrayBuffer(20)  // TODO
+  return new Uint8Array(20)  // TODO
 }
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#keccak256
  */
 export function keccak256(value: buff | uint | int): buff {
-  return new ArrayBuffer(32)  // TODO
+  return new Uint8Array(32)  // TODO
 }
 
 /**
@@ -185,21 +190,21 @@ export function nftTransfer(assetClass: string, assetID: string, sender: princip
  * @link https://docs.blockstack.org/references/language-clarity#sha256
  */
 export function sha256(value: buff | uint | int): buff {
-  return new ArrayBuffer(32)  // TODO
+  return new Uint8Array(32)  // TODO
 }
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#sha512
  */
 export function sha512(value: buff | uint | int): buff {
-  return new ArrayBuffer(64)  // TODO
+  return new Uint8Array(64)  // TODO
 }
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#sha512256
  */
 export function sha512_256(value: buff | uint | int): buff {
-  return new ArrayBuffer(32)  // TODO
+  return new Uint8Array(32)  // TODO
 }
 
 /**

@@ -45,7 +45,12 @@ export function concat(a, b) {
     if (a instanceof Array && b instanceof Array) {
         return [].concat(a, b);
     }
-    // TODO: buff
+    if (a instanceof Uint8Array && b instanceof Uint8Array) {
+        const result = new Uint8Array(a.byteLength + b.byteLength);
+        result.set(a, 0);
+        result.set(b, a.byteLength);
+        return result;
+    }
     throw new TypeError();
 }
 /**
@@ -112,13 +117,13 @@ export function getBlockInfo(propName, blockHeight) {
  * @link https://docs.blockstack.org/references/language-clarity#hash160
  */
 export function hash160(value) {
-    return new ArrayBuffer(20); // TODO
+    return new Uint8Array(20); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#keccak256
  */
 export function keccak256(value) {
-    return new ArrayBuffer(32); // TODO
+    return new Uint8Array(32); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#map
@@ -148,19 +153,19 @@ export function nftTransfer(assetClass, assetID, sender, recipient) {
  * @link https://docs.blockstack.org/references/language-clarity#sha256
  */
 export function sha256(value) {
-    return new ArrayBuffer(32); // TODO
+    return new Uint8Array(32); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#sha512
  */
 export function sha512(value) {
-    return new ArrayBuffer(64); // TODO
+    return new Uint8Array(64); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#sha512256
  */
 export function sha512_256(value) {
-    return new ArrayBuffer(32); // TODO
+    return new Uint8Array(32); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#to-int
