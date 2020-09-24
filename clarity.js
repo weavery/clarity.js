@@ -1,4 +1,5 @@
 /* This is free and unencumbered software released into the public domain. */
+import * as crypto from "crypto";
 /**
  * @link https://docs.blockstack.org/references/language-clarity#clarity-type-system
  */
@@ -123,7 +124,12 @@ export function getBlockInfo(propName, blockHeight) {
  * @link https://docs.blockstack.org/references/language-clarity#hash160
  */
 export function hash160(value) {
-    return new Uint8Array(20); // TODO
+    if (value instanceof Uint8Array) {
+        const sha256 = crypto.createHash('sha256').update(value).digest();
+        const buffer = crypto.createHash('ripemd160').update(sha256).digest();
+        return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength);
+    }
+    throw new TypeError(); // TODO: uint, int
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#keccak256
@@ -162,19 +168,31 @@ export function nftTransfer(assetClass, assetID, sender, recipient) {
  * @link https://docs.blockstack.org/references/language-clarity#sha256
  */
 export function sha256(value) {
-    return new Uint8Array(32); // TODO
+    if (value instanceof Uint8Array) {
+        const buffer = crypto.createHash('sha256').update(value).digest();
+        return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength);
+    }
+    throw new TypeError(); // TODO: uint, int
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#sha512
  */
 export function sha512(value) {
-    return new Uint8Array(64); // TODO
+    if (value instanceof Uint8Array) {
+        const buffer = crypto.createHash('sha512').update(value).digest();
+        return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength);
+    }
+    throw new TypeError(); // TODO: uint, int
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#sha512256
  */
 export function sha512_256(value) {
-    return new Uint8Array(32); // TODO
+    if (value instanceof Uint8Array) {
+        const buffer = crypto.createHash('sha512-256').update(value).digest();
+        return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength);
+    }
+    throw new TypeError(); // TODO: uint, int
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#to-int

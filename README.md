@@ -9,6 +9,7 @@
 
 Clarity | Type | TypeScript | JavaScript | Notes
 ------- | ---- | ---------- | ---------- | -----
+[`buff`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | class | `Uint8Array` | `Uint8Array` |
 [`err`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | class | `Err<T>` | `Err` |
 
 ### Supported Clarity features
@@ -30,15 +31,15 @@ Clarity | Type | TypeScript | Status | Notes
 [`ft-mint?`](https://docs.blockstack.org/references/language-clarity#ft-mint) | function | `ftMint()` | 🚧 |
 [`ft-transfer?`](https://docs.blockstack.org/references/language-clarity#ft-transfer) | function | `ftTransfer()` | 🚧 |
 [`get-block-info?`](https://docs.blockstack.org/references/language-clarity#get-block-info) | function | `getBlockInfo()` | 🚧 |
-[`hash160`](https://docs.blockstack.org/references/language-clarity#hash160) | function | `hash160()` | 🚧 |
+[`hash160`](https://docs.blockstack.org/references/language-clarity#hash160) | function | `hash160()` | ✅ |
 [`keccak256`](https://docs.blockstack.org/references/language-clarity#keccak256) | function | `keccak256()` | 🚧 |
 [`map`](https://docs.blockstack.org/references/language-clarity#map) | function | `map<A, B>()` | ✅ |
 [`nft-get-owner?`](https://docs.blockstack.org/references/language-clarity#nft-get-owner) | function | `nftGetOwner()` | 🚧 |
 [`nft-mint?`](https://docs.blockstack.org/references/language-clarity#nft-mint) | function | `nftMint()` | 🚧 |
 [`nft-transfer?`](https://docs.blockstack.org/references/language-clarity#nft-transfer) | function | `nftTransfer()` | 🚧 |
-[`sha256`](https://docs.blockstack.org/references/language-clarity#sha256) | function | `sha256()` | 🚧 |
-[`sha512`](https://docs.blockstack.org/references/language-clarity#sha512) | function | `sha512()` | 🚧 |
-[`sha512/256`](https://docs.blockstack.org/references/language-clarity#sha512256) | function | `sha512_256()` | 🚧 |
+[`sha256`](https://docs.blockstack.org/references/language-clarity#sha256) | function | `sha256()` | ✅ |
+[`sha512`](https://docs.blockstack.org/references/language-clarity#sha512) | function | `sha512()` | ✅ |
+[`sha512/256`](https://docs.blockstack.org/references/language-clarity#sha512256) | function | `sha512_256()` | ✅ |
 [`to-int`](https://docs.blockstack.org/references/language-clarity#to-int) | function | `toInt()` | 🚧 |
 [`to-uint`](https://docs.blockstack.org/references/language-clarity#to-uint) | function | `toUint()` | 🚧 |
 [`try!`](https://docs.blockstack.org/references/language-clarity#try) | function | `tryUnwrap<A, B>()` | 🚧 |
