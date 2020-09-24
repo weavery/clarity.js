@@ -81,13 +81,19 @@ export function err(value) {
  * @link https://docs.blockstack.org/references/language-clarity#filter
  */
 export function filter(func, list) {
-    return null; // TODO
+    if (list instanceof Array) {
+        return list.filter(func);
+    }
+    throw new TypeError();
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#fold
  */
 export function fold(func, list, initialValue) {
-    return initialValue; // TODO
+    if (list instanceof Array) {
+        return list.reduce((accumulator, currentValue) => func(currentValue, accumulator), initialValue);
+    }
+    throw new TypeError();
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#ft-get-balance
@@ -129,7 +135,10 @@ export function keccak256(value) {
  * @link https://docs.blockstack.org/references/language-clarity#map
  */
 export function map(func, list) {
-    return null; // TODO
+    if (list instanceof Array) {
+        return list.map(func);
+    }
+    throw new TypeError();
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#nft-get-owner

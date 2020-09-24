@@ -71,7 +71,7 @@ export function concat<T>(a: list<T> | buff, b: list<T> | buff): list<T> | buff 
     result.set(b, a.byteLength)
     return result
   }
-  throw new TypeError();
+  throw new TypeError()
 }
 
 /**
@@ -105,15 +105,21 @@ export function err<T>(value: T) {
 /**
  * @link https://docs.blockstack.org/references/language-clarity#filter
  */
-export function filter<A>(func: (a: A) => bool, list: list<A>): list<A> | null {
-  return null  // TODO
+export function filter<A>(func: (a: A) => bool, list: list<A>): list<A> {
+  if (list instanceof Array) {
+    return list.filter(func)
+  }
+  throw new TypeError()
 }
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#fold
  */
 export function fold<A, B>(func: (a: A, b: B) => B, list: list<A>, initialValue: B): B {
-  return initialValue  // TODO
+  if (list instanceof Array) {
+    return list.reduce((accumulator, currentValue) => func(currentValue, accumulator), initialValue)
+  }
+  throw new TypeError()
 }
 
 /**
@@ -161,8 +167,11 @@ export function keccak256(value: buff | uint | int): buff {
 /**
  * @link https://docs.blockstack.org/references/language-clarity#map
  */
-export function map<A, B>(func: (a: A) => B, list: list<A>): list<B> | null {
-  return null  // TODO
+export function map<A, B>(func: (a: A) => B, list: list<A>): list<B> {
+  if (list instanceof Array) {
+    return list.map(func)
+  }
+  throw new TypeError()
 }
 
 /**
