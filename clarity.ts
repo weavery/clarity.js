@@ -28,11 +28,18 @@ function hash(algorithm: string, value: buff | uint | int): buff {
   throw new TypeError()
 }
 
+export class Panic<T> extends Error {
+  public constructor(message: string) {
+    super(message)
+    Object.setPrototypeOf(this, Panic.prototype)
+  }
+}
+
 /**
  * @link https://docs.blockstack.org/references/language-clarity#clarity-type-system
  */
 export class Err<T> extends Error {
-  public constructor(value: T) {
+  public constructor(public value: T) {
     super("")  // TODO
     Object.setPrototypeOf(this, Err.prototype)
   }
@@ -94,7 +101,7 @@ export function concat<T>(a: list<T> | buff, b: list<T> | buff): list<T> | buff 
  * @link https://docs.blockstack.org/references/language-clarity#contract-call
  */
 export function contractCall<A, B>(contractName: trait, functionName: string, ...args: any): response<A, B> {
-  return err(null)  // TODO
+  throw new Error("not implemented yet")  // TODO
 }
 
 /**
@@ -149,14 +156,14 @@ export function ftGetBalance(tokenName: string, principal: principal): uint {
  * @link https://docs.blockstack.org/references/language-clarity#ft-mint
  */
 export function ftMint(tokenName: string, amount: uint, recipient: principal): response<bool, uint> {
-  return err(null)  // TODO
+  throw new Error("not implemented yet")  // TODO
 }
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#ft-transfer
  */
 export function ftTransfer(tokenName: string, amount: uint, sender: principal, recipient: principal): response<bool, uint> {
-  return err(null)  // TODO
+  throw new Error("not implemented yet")  // TODO
 }
 
 /**
@@ -212,14 +219,14 @@ export function nftGetOwner(assetClass: string, assetID: string): optional<princ
  * @link https://docs.blockstack.org/references/language-clarity#nft-mint
  */
 export function nftMint(assetClass: string, assetID: string, recipient: principal): response<bool, uint> {
-  return err(null)  // TODO
+  throw new Error("not implemented yet")  // TODO
 }
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#nft-transfer
  */
 export function nftTransfer(assetClass: string, assetID: string, sender: principal, recipient: principal): response<bool, uint> {
-  return err(null)  // TODO
+  throw new Error("not implemented yet")  // TODO
 }
 
 /**
@@ -289,12 +296,21 @@ export function unwrapErr<A, B>(responseInput: response<A, B>, thrownValue: B): 
  * @link https://docs.blockstack.org/references/language-clarity#unwrap-err-panic
  */
 export function unwrapErrPanic<A, B>(responseInput: response<A, B>): B {
-  throw new Error("not implemented yet")  // TODO
+  if (responseInput instanceof Err) {
+    return responseInput.value
+  }
+  throw new Panic("unwrapErrPanic")
 }
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#unwrap-panic
  */
 export function unwrapPanic<A, B>(optionInput: optional<A> | response<A, B>): A {
-  throw new Error("not implemented yet")  // TODO
+  if (optionInput === null) {
+    throw new Panic("unwrapPanic")
+  }
+  if (optionInput instanceof Err) {
+    throw new Panic("unwrapPanic")
+  }
+  return optionInput
 }

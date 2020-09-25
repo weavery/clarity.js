@@ -172,9 +172,12 @@ test('unwrapErr', () => {
 })
 
 test('unwrapErrPanic', () => {
-  // TODO
+  expect(clarity.unwrapErrPanic(clarity.err(1))).toBe(1)
+  expect(() => clarity.unwrapErrPanic(42)).toThrow(clarity.Panic)
 })
 
 test('unwrapPanic', () => {
-  // TODO
+  expect(clarity.unwrapPanic(42)).toBe(42)
+  expect(() => clarity.unwrapPanic(null)).toThrow(clarity.Panic)
+  expect(() => clarity.unwrapPanic(clarity.err(1))).toThrow(clarity.Panic)
 })

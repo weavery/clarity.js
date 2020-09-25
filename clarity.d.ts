@@ -9,10 +9,14 @@ declare type err<T> = Err<T>;
 declare type response<T, E> = T | err<E>;
 declare type trait = string;
 declare type uint = number;
+export declare class Panic<T> extends Error {
+    constructor(message: string);
+}
 /**
  * @link https://docs.blockstack.org/references/language-clarity#clarity-type-system
  */
 export declare class Err<T> extends Error {
+    value: T;
     constructor(value: T);
 }
 export declare function requireVersion(version: string): void;

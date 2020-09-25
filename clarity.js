@@ -13,12 +13,19 @@ function hash(algorithm, value) {
     }
     throw new TypeError();
 }
+export class Panic extends Error {
+    constructor(message) {
+        super(message);
+        Object.setPrototypeOf(this, Panic.prototype);
+    }
+}
 /**
  * @link https://docs.blockstack.org/references/language-clarity#clarity-type-system
  */
 export class Err extends Error {
     constructor(value) {
         super(""); // TODO
+        this.value = value;
         Object.setPrototypeOf(this, Err.prototype);
     }
 }
@@ -71,7 +78,7 @@ export function concat(a, b) {
  * @link https://docs.blockstack.org/references/language-clarity#contract-call
  */
 export function contractCall(contractName, functionName, ...args) {
-    return err(null); // TODO
+    throw new Error("not implemented yet"); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#contract-caller
@@ -119,13 +126,13 @@ export function ftGetBalance(tokenName, principal) {
  * @link https://docs.blockstack.org/references/language-clarity#ft-mint
  */
 export function ftMint(tokenName, amount, recipient) {
-    return err(null); // TODO
+    throw new Error("not implemented yet"); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#ft-transfer
  */
 export function ftTransfer(tokenName, amount, sender, recipient) {
-    return err(null); // TODO
+    throw new Error("not implemented yet"); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#get-block-info
@@ -175,13 +182,13 @@ export function nftGetOwner(assetClass, assetID) {
  * @link https://docs.blockstack.org/references/language-clarity#nft-mint
  */
 export function nftMint(assetClass, assetID, recipient) {
-    return err(null); // TODO
+    throw new Error("not implemented yet"); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#nft-transfer
  */
 export function nftTransfer(assetClass, assetID, sender, recipient) {
-    return err(null); // TODO
+    throw new Error("not implemented yet"); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#sha256
@@ -241,11 +248,20 @@ export function unwrapErr(responseInput, thrownValue) {
  * @link https://docs.blockstack.org/references/language-clarity#unwrap-err-panic
  */
 export function unwrapErrPanic(responseInput) {
-    throw new Error("not implemented yet"); // TODO
+    if (responseInput instanceof Err) {
+        return responseInput.value;
+    }
+    throw new Panic("unwrapErrPanic");
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#unwrap-panic
  */
 export function unwrapPanic(optionInput) {
-    throw new Error("not implemented yet"); // TODO
+    if (optionInput === null) {
+        throw new Panic("unwrapPanic");
+    }
+    if (optionInput instanceof Err) {
+        throw new Panic("unwrapPanic");
+    }
+    return optionInput;
 }
