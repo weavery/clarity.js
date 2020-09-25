@@ -138,7 +138,7 @@ export function ftTransfer(tokenName, amount, sender, recipient) {
  * @link https://docs.blockstack.org/references/language-clarity#get-block-info
  */
 export function getBlockInfo(propName, blockHeight) {
-    return null; // TODO
+    return none; // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#hash160
@@ -176,7 +176,7 @@ export function isErr(value) {
  * @link https://docs.blockstack.org/references/language-clarity#is-none
  */
 export function isNone(value) {
-    return value === null;
+    return value === none;
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#is-ok
@@ -188,7 +188,7 @@ export function isOk(value) {
  * @link https://docs.blockstack.org/references/language-clarity#is-some
  */
 export function isSome(value) {
-    return value !== null;
+    return value !== none;
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#keccak256
@@ -209,7 +209,7 @@ export function map(func, list) {
  * @link https://docs.blockstack.org/references/language-clarity#nft-get-owner
  */
 export function nftGetOwner(assetClass, assetID) {
-    return null; // TODO
+    return none; // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#nft-mint
@@ -223,6 +223,10 @@ export function nftMint(assetClass, assetID, recipient) {
 export function nftTransfer(assetClass, assetID, sender, recipient) {
     throw new Error("not implemented yet"); // TODO
 }
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#none
+ */
+export const none = null;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#ok
  */
@@ -246,6 +250,12 @@ export function sha512(value) {
  */
 export function sha512_256(value) {
     return hash('sha512-256', value);
+}
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#some
+ */
+export function some(value) {
+    return value;
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#to-int
@@ -296,7 +306,7 @@ export function unwrapErrPanic(responseInput) {
  * @link https://docs.blockstack.org/references/language-clarity#unwrap-panic
  */
 export function unwrapPanic(optionInput) {
-    if (optionInput === null) {
+    if (optionInput === none) {
         throw new Panic("unwrapPanic");
     }
     if (optionInput instanceof Err) {

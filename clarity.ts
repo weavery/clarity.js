@@ -7,7 +7,7 @@ type buff = Uint8Array
 type expr<T> = () => T
 type int = number
 type list<E> = Array<E>
-type optional<T> = T | null
+type optional<T> = T | typeof none
 type principal = string
 type err<T> = Err<T>
 type response<T, E> = T | err<E>
@@ -170,7 +170,7 @@ export function ftTransfer(tokenName: string, amount: uint, sender: principal, r
  * @link https://docs.blockstack.org/references/language-clarity#get-block-info
  */
 export function getBlockInfo(propName: string, blockHeight: uint): optional<buff> | optional<uint> {
-  return null  // TODO
+  return none  // TODO
 }
 
 /**
@@ -212,7 +212,7 @@ export function isErr(value: any): bool {
  * @link https://docs.blockstack.org/references/language-clarity#is-none
  */
 export function isNone(value: any): bool {
-  return value === null
+  return value === none
 }
 
 /**
@@ -226,7 +226,7 @@ export function isOk(value: any): bool {
  * @link https://docs.blockstack.org/references/language-clarity#is-some
  */
 export function isSome(value: any): bool {
-  return value !== null
+  return value !== none
 }
 
 /**
@@ -250,7 +250,7 @@ export function map<A, B>(func: (a: A) => B, list: list<A>): list<B> {
  * @link https://docs.blockstack.org/references/language-clarity#nft-get-owner
  */
 export function nftGetOwner(assetClass: string, assetID: string): optional<principal> {
-  return null  // TODO
+  return none  // TODO
 }
 
 /**
@@ -266,6 +266,11 @@ export function nftMint(assetClass: string, assetID: string, recipient: principa
 export function nftTransfer(assetClass: string, assetID: string, sender: principal, recipient: principal): response<bool, uint> {
   throw new Error("not implemented yet")  // TODO
 }
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#none
+ */
+export const none: any = null
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#ok
@@ -293,6 +298,13 @@ export function sha512(value: buff | uint | int): buff {
  */
 export function sha512_256(value: buff | uint | int): buff {
   return hash('sha512-256', value)
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#some
+ */
+export function some<T>(value: T): optional<T> {
+  return value
 }
 
 /**
@@ -351,7 +363,7 @@ export function unwrapErrPanic<A, B>(responseInput: response<A, B>): B {
  * @link https://docs.blockstack.org/references/language-clarity#unwrap-panic
  */
 export function unwrapPanic<A, B>(optionInput: optional<A> | response<A, B>): A {
-  if (optionInput === null) {
+  if (optionInput === none) {
     throw new Panic("unwrapPanic")
   }
   if (optionInput instanceof Err) {

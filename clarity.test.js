@@ -132,6 +132,10 @@ test('nftTransfer', () => {
   // TODO
 })
 
+test('none', () => {
+  expect(clarity.none).toEqual(null)
+})
+
 test('ok', () => {
   expect(clarity.ok(1)).toEqual(1)
 })
@@ -176,6 +180,10 @@ test('sha512_256(1)', () => {
   const expectedHex = '515a7e92e7c60522db968d81ff70b80818fc17aeabbec36baf0dda2812e94a86'
   const expected = Uint8Array.from(Buffer.from(expectedHex, 'hex'))
   expect(clarity.sha512_256(input)).toEqual(expected)
+})
+
+test('some', () => {
+  expect(clarity.some(1)).toEqual(1)
 })
 
 test('toInt', () => {

@@ -3,7 +3,7 @@ declare type buff = Uint8Array;
 declare type expr<T> = () => T;
 declare type int = number;
 declare type list<E> = Array<E>;
-declare type optional<T> = T | null;
+declare type optional<T> = T | typeof none;
 declare type principal = string;
 declare type err<T> = Err<T>;
 declare type response<T, E> = T | err<E>;
@@ -126,6 +126,10 @@ export declare function nftMint(assetClass: string, assetID: string, recipient: 
  */
 export declare function nftTransfer(assetClass: string, assetID: string, sender: principal, recipient: principal): response<bool, uint>;
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#none
+ */
+export declare const none: any;
+/**
  * @link https://docs.blockstack.org/references/language-clarity#ok
  */
 export declare function ok<T, E>(value: T): response<T, E>;
@@ -141,6 +145,10 @@ export declare function sha512(value: buff | uint | int): buff;
  * @link https://docs.blockstack.org/references/language-clarity#sha512256
  */
 export declare function sha512_256(value: buff | uint | int): buff;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#some
+ */
+export declare function some<T>(value: T): optional<T>;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#to-int
  */
