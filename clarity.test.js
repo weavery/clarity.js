@@ -86,23 +86,30 @@ test('hash160(0)', () => {
 })
 
 test('isEq', () => {
-  // TODO
+  expect(() => clarity.isEq()).toThrow(TypeError)
+  expect(clarity.isEq(1, 1)).toBe(true)
+  expect(clarity.isEq(true, false)).toBe(false)
+  expect(() => clarity.isEq("abc", 234, 234)).toThrow(TypeError)
 })
 
 test('isErr', () => {
-  // TODO
+  expect(clarity.isErr(1)).toBe(false)
+  expect(clarity.isErr(clarity.err(1))).toBe(true)
 })
 
 test('isNone', () => {
-  // TODO
+  expect(clarity.isNone(1)).toBe(false)
+  expect(clarity.isNone(null)).toBe(true)
 })
 
 test('isOk', () => {
-  // TODO
+  expect(clarity.isOk(1)).toBe(true)
+  expect(clarity.isOk(clarity.err(1))).toBe(false)
 })
 
 test('isSome', () => {
-  // TODO
+  expect(clarity.isSome(1)).toBe(true)
+  expect(clarity.isSome(null)).toBe(false)
 })
 
 test('keccak256', () => {

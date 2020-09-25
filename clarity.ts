@@ -194,36 +194,39 @@ export function hash160(value: buff | uint | int): buff {
 /**
  * @link https://docs.blockstack.org/references/language-clarity#is-eq
  */
-export function isEq(value: any): bool {
-  return false  // TODO
+export function isEq(...values: any[]): bool {
+  if (values.length > 0 && values.every((value) => typeof value === typeof values[0])) {
+    return values.every((value) => value === values[0])
+  }
+  throw new TypeError()
 }
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#is-err
  */
 export function isErr(value: any): bool {
-  return false  // TODO
+  return value instanceof Err
 }
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#is-none
  */
 export function isNone(value: any): bool {
-  return false  // TODO
+  return value === null
 }
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#is-ok
  */
 export function isOk(value: any): bool {
-  return false  // TODO
+  return !(value instanceof Err)
 }
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#is-some
  */
 export function isSome(value: any): bool {
-  return false  // TODO
+  return value !== null
 }
 
 /**

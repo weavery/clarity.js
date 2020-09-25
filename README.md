@@ -38,11 +38,11 @@ Clarity | Type | TypeScript | Status | Notes
 [`ft-transfer?`](https://docs.blockstack.org/references/language-clarity#ft-transfer) | function | `ftTransfer()` | 🚧 |
 [`get-block-info?`](https://docs.blockstack.org/references/language-clarity#get-block-info) | function | `getBlockInfo()` | 🚧 |
 [`hash160`](https://docs.blockstack.org/references/language-clarity#hash160) | function | `hash160()` | ✅ |
-[`is-eq`](https://docs.blockstack.org/references/language-clarity#is-eq) | function | `isEq()` | 🚧 |
-[`is-err`](https://docs.blockstack.org/references/language-clarity#is-err) | function | `isErr()` | 🚧 |
-[`is-none`](https://docs.blockstack.org/references/language-clarity#is-none) | function | `isNone()` | 🚧 |
-[`is-ok`](https://docs.blockstack.org/references/language-clarity#is-ok) | function | `isOk()` | 🚧 |
-[`is-some`](https://docs.blockstack.org/references/language-clarity#is-some) | function | `isSome()` | 🚧 |
+[`is-eq`](https://docs.blockstack.org/references/language-clarity#is-eq) | function | `isEq()` | ✅ |
+[`is-err`](https://docs.blockstack.org/references/language-clarity#is-err) | function | `isErr()` | ✅ |
+[`is-none`](https://docs.blockstack.org/references/language-clarity#is-none) | function | `isNone()` | ✅ |
+[`is-ok`](https://docs.blockstack.org/references/language-clarity#is-ok) | function | `isOk()` | ✅ |
+[`is-some`](https://docs.blockstack.org/references/language-clarity#is-some) | function | `isSome()` | ✅ |
 [`keccak256`](https://docs.blockstack.org/references/language-clarity#keccak256) | function | `keccak256()` | 🚧 |
 [`map`](https://docs.blockstack.org/references/language-clarity#map) | function | `map<A, B>()` | ✅ |
 [`nft-get-owner?`](https://docs.blockstack.org/references/language-clarity#nft-get-owner) | function | `nftGetOwner()` | 🚧 |

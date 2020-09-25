@@ -160,32 +160,35 @@ export function hash160(value) {
 /**
  * @link https://docs.blockstack.org/references/language-clarity#is-eq
  */
-export function isEq(value) {
-    return false; // TODO
+export function isEq(...values) {
+    if (values.length > 0 && values.every((value) => typeof value === typeof values[0])) {
+        return values.every((value) => value === values[0]);
+    }
+    throw new TypeError();
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#is-err
  */
 export function isErr(value) {
-    return false; // TODO
+    return value instanceof Err;
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#is-none
  */
 export function isNone(value) {
-    return false; // TODO
+    return value === null;
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#is-ok
  */
 export function isOk(value) {
-    return false; // TODO
+    return !(value instanceof Err);
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#is-some
  */
 export function isSome(value) {
-    return false; // TODO
+    return value !== null;
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#keccak256

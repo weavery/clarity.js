@@ -88,7 +88,7 @@ export declare function hash160(value: buff | uint | int): buff;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#is-eq
  */
-export declare function isEq(value: any): bool;
+export declare function isEq(...values: any[]): bool;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#is-err
  */
