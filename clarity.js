@@ -224,6 +224,12 @@ export function nftTransfer(assetClass, assetID, sender, recipient) {
     throw new Error("not implemented yet"); // TODO
 }
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#ok
+ */
+export function ok(value) {
+    return value;
+}
+/**
  * @link https://docs.blockstack.org/references/language-clarity#sha256
  */
 export function sha256(value) {

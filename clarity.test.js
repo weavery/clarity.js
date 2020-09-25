@@ -49,7 +49,7 @@ test('contractOf', () => {
 })
 
 test('err', () => {
-  // TODO
+  expect(clarity.err(1)).toEqual(new clarity.Err(1))
 })
 
 test('filter', () => {
@@ -130,6 +130,10 @@ test('nftMint', () => {
 
 test('nftTransfer', () => {
   // TODO
+})
+
+test('ok', () => {
+  expect(clarity.ok(1)).toEqual(1)
 })
 
 test('sha256(0)', () => {

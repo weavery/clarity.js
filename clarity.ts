@@ -268,6 +268,13 @@ export function nftTransfer(assetClass: string, assetID: string, sender: princip
 }
 
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#ok
+ */
+export function ok<T, E>(value: T): response<T, E> {
+  return value
+}
+
+/**
  * @link https://docs.blockstack.org/references/language-clarity#sha256
  */
 export function sha256(value: buff | uint | int): buff {

@@ -126,6 +126,10 @@ export declare function nftMint(assetClass: string, assetID: string, recipient: 
  */
 export declare function nftTransfer(assetClass: string, assetID: string, sender: principal, recipient: principal): response<bool, uint>;
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#ok
+ */
+export declare function ok<T, E>(value: T): response<T, E>;
+/**
  * @link https://docs.blockstack.org/references/language-clarity#sha256
  */
 export declare function sha256(value: buff | uint | int): buff;
