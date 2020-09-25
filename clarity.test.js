@@ -113,7 +113,10 @@ test('isSome', () => {
 })
 
 test('keccak256', () => {
-  // TODO
+  const input = 0
+  const expectedHex = 'f490de2920c8a35fabeb13208852aa28c76f9be9b03a4dd2b3c075f7a26923b4'
+  const expected = Uint8Array.from(Buffer.from(expectedHex, 'hex'))
+  expect(clarity.keccak256(input)).toEqual(expected)
 })
 
 test('map', () => {

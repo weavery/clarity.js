@@ -1,6 +1,7 @@
 /* This is free and unencumbered software released into the public domain. */
 
 import * as crypto from "crypto"
+import createKeccakHash from "keccak"
 
 type bool = boolean
 type buff = Uint8Array
@@ -22,7 +23,14 @@ function hash(algorithm: string, value: buff | uint | int): buff {
     value = buff
   }
   if (value instanceof Uint8Array) {
-    const buffer = crypto.createHash(algorithm).update(value).digest()
+    let buffer = null
+    switch (algorithm) {
+      case 'keccak256':
+        buffer = createKeccakHash('keccak256').update(Buffer.from(value)).digest()
+        break
+      default:
+        buffer = crypto.createHash(algorithm).update(value).digest()
+    }
     return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength)
   }
   throw new TypeError()
@@ -233,7 +241,7 @@ export function isSome(value: any): bool {
  * @link https://docs.blockstack.org/references/language-clarity#keccak256
  */
 export function keccak256(value: buff | uint | int): buff {
-  return new Uint8Array(32)  // TODO
+  return hash('keccak256', value)
 }
 
 /**

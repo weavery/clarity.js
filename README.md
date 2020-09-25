@@ -43,7 +43,7 @@ Clarity | Type | TypeScript | Status | Notes
 [`is-none`](https://docs.blockstack.org/references/language-clarity#is-none) | function | `isNone()` | ✅ |
 [`is-ok`](https://docs.blockstack.org/references/language-clarity#is-ok) | function | `isOk()` | ✅ |
 [`is-some`](https://docs.blockstack.org/references/language-clarity#is-some) | function | `isSome()` | ✅ |
-[`keccak256`](https://docs.blockstack.org/references/language-clarity#keccak256) | function | `keccak256()` | 🚧 |
+[`keccak256`](https://docs.blockstack.org/references/language-clarity#keccak256) | function | `keccak256()` | ✅ |
 [`map`](https://docs.blockstack.org/references/language-clarity#map) | function | `map<A, B>()` | ✅ |
 [`nft-get-owner?`](https://docs.blockstack.org/references/language-clarity#nft-get-owner) | function | `nftGetOwner()` | 🚧 |
 [`nft-mint?`](https://docs.blockstack.org/references/language-clarity#nft-mint) | function | `nftMint()` | 🚧 |

@@ -31,6 +31,10 @@
   "homepage": "https://github.com/weavery/clarity.js",
   "bugs": "https://github.com/weavery/clarity.js/issues",
   "repository": "https://github.com/weavery/clarity.js.git",
+  "dependencies": {
+    "@types/keccak": "^3.0.1",
+    "keccak": "^3.0.1"
+  },
   "devDependencies": {
     "jest": "^26.4.2"
   },

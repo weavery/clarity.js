@@ -1,5 +1,6 @@
 /* This is free and unencumbered software released into the public domain. */
 import * as crypto from "crypto";
+import createKeccakHash from "keccak";
 function hash(algorithm, value) {
     if (Number.isInteger(value)) {
         let buff = new Uint8Array(16); // 128 bits
@@ -8,7 +9,14 @@ function hash(algorithm, value) {
         value = buff;
     }
     if (value instanceof Uint8Array) {
-        const buffer = crypto.createHash(algorithm).update(value).digest();
+        let buffer = null;
+        switch (algorithm) {
+            case 'keccak256':
+                buffer = createKeccakHash('keccak256').update(Buffer.from(value)).digest();
+                break;
+            default:
+                buffer = crypto.createHash(algorithm).update(value).digest();
+        }
         return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength);
     }
     throw new TypeError();
@@ -194,7 +202,7 @@ export function isSome(value) {
  * @link https://docs.blockstack.org/references/language-clarity#keccak256
  */
 export function keccak256(value) {
-    return new Uint8Array(32); // TODO
+    return hash('keccak256', value);
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#map
