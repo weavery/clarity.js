@@ -9,8 +9,14 @@
 
 Clarity | Type | TypeScript | JavaScript | Notes
 ------- | ---- | ---------- | ---------- | -----
+[`bool`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | class | `boolean` | `boolean` |
 [`buff`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | class | `Uint8Array` | `Uint8Array` |
 [`err`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | class | `Err<T>` | `Err` |
+[`int`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | class | `number` or `bigint` | `number` or `BigInt` |
+[`uint`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | class | `number` or `bigint` | `number` or `BigInt` |
+[`(list N T)`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | - | `Array<T>` | `Array` |
+[`(optional T)`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | - | `T` or `null` | `T` or `null` |
+[`(response T E)`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | - | `T` or `Err<E>` | `T` or `Err` |
 
 ### Supported Clarity features
 
