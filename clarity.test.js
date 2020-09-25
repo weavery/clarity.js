@@ -143,6 +143,10 @@ test('ok', () => {
   expect(clarity.ok(1)).toEqual(1)
 })
 
+test('print', () => {
+  expect(clarity.print(1 + 2 + 3)).toEqual(6)
+})
+
 test('sha256(0)', () => {
   const input = 0
   const expectedHex = '374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb'

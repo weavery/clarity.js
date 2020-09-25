@@ -50,6 +50,7 @@ Clarity | Type | TypeScript | Status | Notes
 [`nft-transfer?`](https://docs.blockstack.org/references/language-clarity#nft-transfer) | function | `nftTransfer()` | 🚧 |
 [`none`](https://docs.blockstack.org/references/language-clarity#none) | constant | `none` | ✅ |
 [`ok`](https://docs.blockstack.org/references/language-clarity#ok) | function | `ok<T, E>()` | ✅ |
+[`print`](https://docs.blockstack.org/references/language-clarity#print) | function | `print<T>()` | ✅ |
 [`sha256`](https://docs.blockstack.org/references/language-clarity#sha256) | function | `sha256()` | ✅ |
 [`sha512`](https://docs.blockstack.org/references/language-clarity#sha512) | function | `sha512()` | ✅ |
 [`sha512/256`](https://docs.blockstack.org/references/language-clarity#sha512256) | function | `sha512_256()` | ✅ |

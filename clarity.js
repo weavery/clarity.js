@@ -242,6 +242,13 @@ export function ok(value) {
     return value;
 }
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#print
+ */
+export function print(value) {
+    console.log(value);
+    return value;
+}
+/**
  * @link https://docs.blockstack.org/references/language-clarity#sha256
  */
 export function sha256(value) {

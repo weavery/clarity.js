@@ -134,6 +134,10 @@ export declare const none: any;
  */
 export declare function ok<T, E>(value: T): response<T, E>;
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#print
+ */
+export declare function print<T>(value: T): T;
+/**
  * @link https://docs.blockstack.org/references/language-clarity#sha256
  */
 export declare function sha256(value: buff | uint | int): buff;

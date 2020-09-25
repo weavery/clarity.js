@@ -288,6 +288,14 @@ export function ok<T, E>(value: T): response<T, E> {
 }
 
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#print
+ */
+export function print<T>(value: T): T {
+  console.log(value)
+  return value
+}
+
+/**
  * @link https://docs.blockstack.org/references/language-clarity#sha256
  */
 export function sha256(value: buff | uint | int): buff {
