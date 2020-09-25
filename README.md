@@ -36,6 +36,7 @@ Clarity | Type | TypeScript | Status | Notes
 [`ft-get-balance`](https://docs.blockstack.org/references/language-clarity#ft-get-balance) | function | `ftGetBalance()` | 🚧 |
 [`ft-mint?`](https://docs.blockstack.org/references/language-clarity#ft-mint) | function | `ftMint()` | 🚧 |
 [`ft-transfer?`](https://docs.blockstack.org/references/language-clarity#ft-transfer) | function | `ftTransfer()` | 🚧 |
+[`get`](https://docs.blockstack.org/references/language-clarity#get) | function | `get()` | 🚧 |
 [`get-block-info?`](https://docs.blockstack.org/references/language-clarity#get-block-info) | function | `getBlockInfo()` | 🚧 |
 [`hash160`](https://docs.blockstack.org/references/language-clarity#hash160) | function | `hash160()` | ✅ |
 [`is-eq`](https://docs.blockstack.org/references/language-clarity#is-eq) | function | `isEq()` | ✅ |
@@ -45,6 +46,10 @@ Clarity | Type | TypeScript | Status | Notes
 [`is-some`](https://docs.blockstack.org/references/language-clarity#is-some) | function | `isSome()` | ✅ |
 [`keccak256`](https://docs.blockstack.org/references/language-clarity#keccak256) | function | `keccak256()` | ✅ |
 [`map`](https://docs.blockstack.org/references/language-clarity#map) | function | `map<A, B>()` | ✅ |
+[`map-delete`](https://docs.blockstack.org/references/language-clarity#map-delete) | function | `mapDelete()` | 🚧 |
+[`map-get?`](https://docs.blockstack.org/references/language-clarity#map-get) | function | `mapGet()` | 🚧 |
+[`map-insert`](https://docs.blockstack.org/references/language-clarity#map-insert) | function | `mapInsert()` | 🚧 |
+[`map-set`](https://docs.blockstack.org/references/language-clarity#map-set) | function | `mapSet()` | 🚧 |
 [`nft-get-owner?`](https://docs.blockstack.org/references/language-clarity#nft-get-owner) | function | `nftGetOwner()` | 🚧 |
 [`nft-mint?`](https://docs.blockstack.org/references/language-clarity#nft-mint) | function | `nftMint()` | 🚧 |
 [`nft-transfer?`](https://docs.blockstack.org/references/language-clarity#nft-transfer) | function | `nftTransfer()` | 🚧 |

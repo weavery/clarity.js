@@ -143,6 +143,12 @@ export function ftTransfer(tokenName, amount, sender, recipient) {
     throw new Error("not implemented yet"); // TODO
 }
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#get
+ */
+export function get() {
+    return none; // TODO
+}
+/**
  * @link https://docs.blockstack.org/references/language-clarity#get-block-info
  */
 export function getBlockInfo(propName, blockHeight) {
@@ -212,6 +218,30 @@ export function map(func, list) {
         return list.map(func);
     }
     throw new TypeError();
+}
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#map-delete
+ */
+export function mapDelete() {
+    return none; // TODO
+}
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#map-get
+ */
+export function mapGet() {
+    return none; // TODO
+}
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#map-insert
+ */
+export function mapInsert() {
+    return none; // TODO
+}
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#map-set
+ */
+export function mapSet() {
+    return none; // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#nft-get-owner

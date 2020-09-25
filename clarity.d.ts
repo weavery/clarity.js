@@ -78,6 +78,10 @@ export declare function ftMint(tokenName: string, amount: uint, recipient: princ
  */
 export declare function ftTransfer(tokenName: string, amount: uint, sender: principal, recipient: principal): response<bool, uint>;
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#get
+ */
+export declare function get(): any;
+/**
  * @link https://docs.blockstack.org/references/language-clarity#get-block-info
  */
 export declare function getBlockInfo(propName: string, blockHeight: uint): optional<buff> | optional<uint>;
@@ -113,6 +117,22 @@ export declare function keccak256(value: buff | uint | int): buff;
  * @link https://docs.blockstack.org/references/language-clarity#map
  */
 export declare function map<A, B>(func: (a: A) => B, list: list<A>): list<B>;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#map-delete
+ */
+export declare function mapDelete(): any;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#map-get
+ */
+export declare function mapGet(): any;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#map-insert
+ */
+export declare function mapInsert(): any;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#map-set
+ */
+export declare function mapSet(): any;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#nft-get-owner
  */

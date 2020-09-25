@@ -175,6 +175,13 @@ export function ftTransfer(tokenName: string, amount: uint, sender: principal, r
 }
 
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#get
+ */
+export function get() {
+  return none  // TODO
+}
+
+/**
  * @link https://docs.blockstack.org/references/language-clarity#get-block-info
  */
 export function getBlockInfo(propName: string, blockHeight: uint): optional<buff> | optional<uint> {
@@ -252,6 +259,34 @@ export function map<A, B>(func: (a: A) => B, list: list<A>): list<B> {
     return list.map(func)
   }
   throw new TypeError()
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#map-delete
+ */
+export function mapDelete() {
+  return none  // TODO
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#map-get
+ */
+export function mapGet() {
+  return none  // TODO
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#map-insert
+ */
+export function mapInsert() {
+  return none  // TODO
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#map-set
+ */
+export function mapSet() {
+  return none  // TODO
 }
 
 /**

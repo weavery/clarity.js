@@ -74,6 +74,10 @@ test('ftTransfer', () => {
   // TODO
 })
 
+test('get', () => {
+  // TODO
+})
+
 test('getBlockInfo', () => {
   // TODO
 })
@@ -121,6 +125,22 @@ test('keccak256', () => {
 
 test('map', () => {
   expect(clarity.map((x) => !x, [true, false, true, false])).toEqual([false, true, false, true])
+})
+
+test('mapDelete', () => {
+  // TODO
+})
+
+test('mapGet', () => {
+  // TODO
+})
+
+test('mapInsert', () => {
+  // TODO
+})
+
+test('mapSet', () => {
+  // TODO
 })
 
 test('nftGetOwner', () => {
