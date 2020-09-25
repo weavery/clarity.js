@@ -85,6 +85,26 @@ test('hash160(0)', () => {
   expect(clarity.hash160(input)).toEqual(expected)
 })
 
+test('isEq', () => {
+  // TODO
+})
+
+test('isErr', () => {
+  // TODO
+})
+
+test('isNone', () => {
+  // TODO
+})
+
+test('isOk', () => {
+  // TODO
+})
+
+test('isSome', () => {
+  // TODO
+})
+
 test('keccak256', () => {
   // TODO
 })

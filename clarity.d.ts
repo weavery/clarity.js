@@ -86,6 +86,26 @@ export declare function getBlockInfo(propName: string, blockHeight: uint): optio
  */
 export declare function hash160(value: buff | uint | int): buff;
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#is-eq
+ */
+export declare function isEq(value: any): bool;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#is-err
+ */
+export declare function isErr(value: any): bool;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#is-none
+ */
+export declare function isNone(value: any): bool;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#is-ok
+ */
+export declare function isOk(value: any): bool;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#is-some
+ */
+export declare function isSome(value: any): bool;
+/**
  * @link https://docs.blockstack.org/references/language-clarity#keccak256
  */
 export declare function keccak256(value: buff | uint | int): buff;

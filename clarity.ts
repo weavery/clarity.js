@@ -192,6 +192,41 @@ export function hash160(value: buff | uint | int): buff {
 }
 
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#is-eq
+ */
+export function isEq(value: any): bool {
+  return false  // TODO
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#is-err
+ */
+export function isErr(value: any): bool {
+  return false  // TODO
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#is-none
+ */
+export function isNone(value: any): bool {
+  return false  // TODO
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#is-ok
+ */
+export function isOk(value: any): bool {
+  return false  // TODO
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#is-some
+ */
+export function isSome(value: any): bool {
+  return false  // TODO
+}
+
+/**
  * @link https://docs.blockstack.org/references/language-clarity#keccak256
  */
 export function keccak256(value: buff | uint | int): buff {
