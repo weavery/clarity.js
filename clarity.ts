@@ -13,6 +13,7 @@ type principal = string
 type err<T> = Err<T>
 type response<T, E> = T | err<E>
 type trait = string
+type tuple = Map<String, any>
 type uint = number
 
 function hash(algorithm: string, value: buff | uint | int): buff {
@@ -177,8 +178,8 @@ export function ftTransfer(tokenName: string, amount: uint, sender: principal, r
 /**
  * @link https://docs.blockstack.org/references/language-clarity#get
  */
-export function get() {
-  return none  // TODO
+export function get<T>(keyName: string, tuple: tuple | optional<tuple>): T | optional<T> {
+  return isNone(tuple) ? none : tuple.get(keyName)
 }
 
 /**
@@ -264,29 +265,33 @@ export function map<A, B>(func: (a: A) => B, list: list<A>): list<B> {
 /**
  * @link https://docs.blockstack.org/references/language-clarity#map-delete
  */
-export function mapDelete() {
-  return none  // TODO
+export function mapDelete(map: Map<tuple, tuple>, key: tuple): bool {
+  return map.delete(key)
 }
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#map-get
  */
-export function mapGet() {
-  return none  // TODO
+export function mapGet(map: Map<tuple, tuple>, key: tuple): optional<tuple> {
+  const value = map.get(key)
+  return value ? some(value) : none
 }
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#map-insert
  */
-export function mapInsert() {
-  return none  // TODO
+export function mapInsert(map: Map<tuple, tuple>, key: tuple, value: tuple): bool {
+  if (map.has(key)) return false
+  map.set(key, value)
+  return true
 }
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#map-set
  */
-export function mapSet() {
-  return none  // TODO
+export function mapSet(map: Map<tuple, tuple>, key: tuple, value: tuple): bool {
+  map.set(key, value)
+  return true
 }
 
 /**

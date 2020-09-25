@@ -8,6 +8,7 @@ declare type principal = string;
 declare type err<T> = Err<T>;
 declare type response<T, E> = T | err<E>;
 declare type trait = string;
+declare type tuple = Map<String, any>;
 declare type uint = number;
 export declare class Panic<T> extends Error {
     constructor(message: string);
@@ -80,7 +81,7 @@ export declare function ftTransfer(tokenName: string, amount: uint, sender: prin
 /**
  * @link https://docs.blockstack.org/references/language-clarity#get
  */
-export declare function get(): any;
+export declare function get<T>(keyName: string, tuple: tuple | optional<tuple>): T | optional<T>;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#get-block-info
  */
@@ -120,19 +121,19 @@ export declare function map<A, B>(func: (a: A) => B, list: list<A>): list<B>;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#map-delete
  */
-export declare function mapDelete(): any;
+export declare function mapDelete(map: Map<tuple, tuple>, key: tuple): bool;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#map-get
  */
-export declare function mapGet(): any;
+export declare function mapGet(map: Map<tuple, tuple>, key: tuple): optional<tuple>;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#map-insert
  */
-export declare function mapInsert(): any;
+export declare function mapInsert(map: Map<tuple, tuple>, key: tuple, value: tuple): bool;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#map-set
  */
-export declare function mapSet(): any;
+export declare function mapSet(map: Map<tuple, tuple>, key: tuple, value: tuple): bool;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#nft-get-owner
  */

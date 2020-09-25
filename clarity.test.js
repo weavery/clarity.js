@@ -75,7 +75,10 @@ test('ftTransfer', () => {
 })
 
 test('get', () => {
-  // TODO
+  const tuple = new Map()
+  tuple.set("name", "blockstack")
+  tuple.set("id", 1337)
+  expect(clarity.get("id", tuple)).toEqual(1337)
 })
 
 test('getBlockInfo', () => {
@@ -128,19 +131,44 @@ test('map', () => {
 })
 
 test('mapDelete', () => {
-  // TODO
+  const names = new Map()
+  const key = new Map()
+  key.set("name", "blockstack")
+  const val = new Map()
+  val.set("id", 1337)
+  names.set(key, val)
+  expect(clarity.mapDelete(names, key)).toBe(true)
+  expect(clarity.mapDelete(names, key)).toBe(false)
 })
 
 test('mapGet', () => {
-  // TODO
+  const names = new Map()
+  const key = new Map()
+  key.set("name", "blockstack")
+  const val = new Map()
+  val.set("id", 1337)
+  names.set(key, val)
+  expect(clarity.mapGet(names, key)).toEqual(clarity.some(val))
 })
 
 test('mapInsert', () => {
-  // TODO
+  const names = new Map()
+  const key = new Map()
+  key.set("name", "blockstack")
+  const val = new Map()
+  val.set("id", 1337)
+  expect(clarity.mapInsert(names, key, val)).toEqual(true)
+  expect(clarity.mapInsert(names, key, val)).toEqual(false)
 })
 
 test('mapSet', () => {
-  // TODO
+  const names = new Map()
+  const key = new Map()
+  key.set("name", "blockstack")
+  const val = new Map()
+  val.set("id", 1337)
+  expect(clarity.mapSet(names, key, val)).toEqual(true)
+  expect(clarity.mapSet(names, key, val)).toEqual(true)
 })
 
 test('nftGetOwner', () => {

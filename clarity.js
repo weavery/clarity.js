@@ -145,8 +145,8 @@ export function ftTransfer(tokenName, amount, sender, recipient) {
 /**
  * @link https://docs.blockstack.org/references/language-clarity#get
  */
-export function get() {
-    return none; // TODO
+export function get(keyName, tuple) {
+    return isNone(tuple) ? none : tuple.get(keyName);
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#get-block-info
@@ -222,26 +222,31 @@ export function map(func, list) {
 /**
  * @link https://docs.blockstack.org/references/language-clarity#map-delete
  */
-export function mapDelete() {
-    return none; // TODO
+export function mapDelete(map, key) {
+    return map.delete(key);
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#map-get
  */
-export function mapGet() {
-    return none; // TODO
+export function mapGet(map, key) {
+    const value = map.get(key);
+    return value ? some(value) : none;
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#map-insert
  */
-export function mapInsert() {
-    return none; // TODO
+export function mapInsert(map, key, value) {
+    if (map.has(key))
+        return false;
+    map.set(key, value);
+    return true;
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#map-set
  */
-export function mapSet() {
-    return none; // TODO
+export function mapSet(map, key, value) {
+    map.set(key, value);
+    return true;
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#nft-get-owner
