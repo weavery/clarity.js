@@ -14,6 +14,20 @@ type response<T, E> = T | err<E>
 type trait = string
 type uint = number
 
+function hash(algorithm: string, value: buff | uint | int): buff {
+  if (Number.isInteger(value)) {
+    let buff = new Uint8Array(16)  // 128 bits
+    let view = new DataView(buff.buffer)
+    view.setBigUint64(0, BigInt(value as number), true)
+    value = buff
+  }
+  if (value instanceof Uint8Array) {
+    const buffer = crypto.createHash(algorithm).update(value).digest()
+    return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength)
+  }
+  throw new TypeError()
+}
+
 /**
  * @link https://docs.blockstack.org/references/language-clarity#clarity-type-system
  */
@@ -156,12 +170,18 @@ export function getBlockInfo(propName: string, blockHeight: uint): optional<buff
  * @link https://docs.blockstack.org/references/language-clarity#hash160
  */
 export function hash160(value: buff | uint | int): buff {
+  if (Number.isInteger(value)) {
+    let buff = new Uint8Array(16)  // 128 bits
+    let view = new DataView(buff.buffer)
+    view.setBigUint64(0, BigInt(value as number), true)
+    value = buff
+  }
   if (value instanceof Uint8Array) {
     const sha256 = crypto.createHash('sha256').update(value).digest()
     const buffer = crypto.createHash('ripemd160').update(sha256).digest()
     return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength)
   }
-  throw new TypeError() // TODO: uint, int
+  throw new TypeError()
 }
 
 /**
@@ -206,33 +226,21 @@ export function nftTransfer(assetClass: string, assetID: string, sender: princip
  * @link https://docs.blockstack.org/references/language-clarity#sha256
  */
 export function sha256(value: buff | uint | int): buff {
-  if (value instanceof Uint8Array) {
-    const buffer = crypto.createHash('sha256').update(value).digest()
-    return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength)
-  }
-  throw new TypeError() // TODO: uint, int
+  return hash('sha256', value)
 }
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#sha512
  */
 export function sha512(value: buff | uint | int): buff {
-  if (value instanceof Uint8Array) {
-    const buffer = crypto.createHash('sha512').update(value).digest()
-    return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength)
-  }
-  throw new TypeError() // TODO: uint, int
+  return hash('sha512', value)
 }
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#sha512256
  */
 export function sha512_256(value: buff | uint | int): buff {
-  if (value instanceof Uint8Array) {
-    const buffer = crypto.createHash('sha512-256').update(value).digest()
-    return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength)
-  }
-  throw new TypeError() // TODO: uint, int
+  return hash('sha512-256', value)
 }
 
 /**

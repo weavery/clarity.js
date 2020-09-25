@@ -1,5 +1,18 @@
 /* This is free and unencumbered software released into the public domain. */
 import * as crypto from "crypto";
+function hash(algorithm, value) {
+    if (Number.isInteger(value)) {
+        let buff = new Uint8Array(16); // 128 bits
+        let view = new DataView(buff.buffer);
+        view.setBigUint64(0, BigInt(value), true);
+        value = buff;
+    }
+    if (value instanceof Uint8Array) {
+        const buffer = crypto.createHash(algorithm).update(value).digest();
+        return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength);
+    }
+    throw new TypeError();
+}
 /**
  * @link https://docs.blockstack.org/references/language-clarity#clarity-type-system
  */
@@ -124,12 +137,18 @@ export function getBlockInfo(propName, blockHeight) {
  * @link https://docs.blockstack.org/references/language-clarity#hash160
  */
 export function hash160(value) {
+    if (Number.isInteger(value)) {
+        let buff = new Uint8Array(16); // 128 bits
+        let view = new DataView(buff.buffer);
+        view.setBigUint64(0, BigInt(value), true);
+        value = buff;
+    }
     if (value instanceof Uint8Array) {
         const sha256 = crypto.createHash('sha256').update(value).digest();
         const buffer = crypto.createHash('ripemd160').update(sha256).digest();
         return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength);
     }
-    throw new TypeError(); // TODO: uint, int
+    throw new TypeError();
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#keccak256
@@ -168,31 +187,19 @@ export function nftTransfer(assetClass, assetID, sender, recipient) {
  * @link https://docs.blockstack.org/references/language-clarity#sha256
  */
 export function sha256(value) {
-    if (value instanceof Uint8Array) {
-        const buffer = crypto.createHash('sha256').update(value).digest();
-        return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength);
-    }
-    throw new TypeError(); // TODO: uint, int
+    return hash('sha256', value);
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#sha512
  */
 export function sha512(value) {
-    if (value instanceof Uint8Array) {
-        const buffer = crypto.createHash('sha512').update(value).digest();
-        return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength);
-    }
-    throw new TypeError(); // TODO: uint, int
+    return hash('sha512', value);
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#sha512256
  */
 export function sha512_256(value) {
-    if (value instanceof Uint8Array) {
-        const buffer = crypto.createHash('sha512-256').update(value).digest();
-        return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength);
-    }
-    throw new TypeError(); // TODO: uint, int
+    return hash('sha512-256', value);
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#to-int
