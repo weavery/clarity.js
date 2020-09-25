@@ -339,22 +339,28 @@ export function txSender(): principal {
  * @link https://docs.blockstack.org/references/language-clarity#unwrap
  */
 export function unwrap<A, B>(optionInput: optional<A> | response<A, B>, thrownValue: A): A {
-  return thrownValue  // TODO
+  if (isNone(optionInput) || isErr(optionInput)) {
+    return thrownValue
+  }
+  return optionInput
 }
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#unwrap-err
  */
 export function unwrapErr<A, B>(responseInput: response<A, B>, thrownValue: B): B {
-  return thrownValue  // TODO
+  if (isErr(responseInput)) {
+    return (responseInput as Err<B>).value
+  }
+  return thrownValue
 }
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#unwrap-err-panic
  */
 export function unwrapErrPanic<A, B>(responseInput: response<A, B>): B {
-  if (responseInput instanceof Err) {
-    return responseInput.value
+  if (isErr(responseInput)) {
+    return (responseInput as Err<B>).value
   }
   throw new Panic("unwrapErrPanic")
 }
@@ -363,10 +369,7 @@ export function unwrapErrPanic<A, B>(responseInput: response<A, B>): B {
  * @link https://docs.blockstack.org/references/language-clarity#unwrap-panic
  */
 export function unwrapPanic<A, B>(optionInput: optional<A> | response<A, B>): A {
-  if (optionInput === none) {
-    throw new Panic("unwrapPanic")
-  }
-  if (optionInput instanceof Err) {
+  if (isNone(optionInput) || isErr(optionInput)) {
     throw new Panic("unwrapPanic")
   }
   return optionInput

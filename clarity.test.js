@@ -99,7 +99,7 @@ test('isErr', () => {
 
 test('isNone', () => {
   expect(clarity.isNone(1)).toBe(false)
-  expect(clarity.isNone(null)).toBe(true)
+  expect(clarity.isNone(clarity.none)).toBe(true)
 })
 
 test('isOk', () => {
@@ -109,7 +109,7 @@ test('isOk', () => {
 
 test('isSome', () => {
   expect(clarity.isSome(1)).toBe(true)
-  expect(clarity.isSome(null)).toBe(false)
+  expect(clarity.isSome(clarity.none)).toBe(false)
 })
 
 test('keccak256', () => {
@@ -203,20 +203,21 @@ test('txSender', () => {
 })
 
 test('unwrap', () => {
-  // TODO
+  expect(clarity.unwrap(clarity.ok(42))).toBe(42)
 })
 
 test('unwrapErr', () => {
-  // TODO
+  expect(clarity.unwrapErr(clarity.err(1), false)).toBe(1)
+  expect(clarity.unwrapErr(clarity.ok(1), 2)).toBe(2)
 })
 
 test('unwrapErrPanic', () => {
   expect(clarity.unwrapErrPanic(clarity.err(1))).toBe(1)
-  expect(() => clarity.unwrapErrPanic(42)).toThrow(clarity.Panic)
+  expect(() => clarity.unwrapErrPanic(clarity.ok(42))).toThrow(clarity.Panic)
 })
 
 test('unwrapPanic', () => {
-  expect(clarity.unwrapPanic(42)).toBe(42)
-  expect(() => clarity.unwrapPanic(null)).toThrow(clarity.Panic)
+  expect(clarity.unwrapPanic(clarity.ok(42))).toBe(42)
+  expect(() => clarity.unwrapPanic(clarity.none)).toThrow(clarity.Panic)
   expect(() => clarity.unwrapPanic(clarity.err(1))).toThrow(clarity.Panic)
 })

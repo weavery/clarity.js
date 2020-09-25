@@ -285,19 +285,25 @@ export function txSender() {
  * @link https://docs.blockstack.org/references/language-clarity#unwrap
  */
 export function unwrap(optionInput, thrownValue) {
-    return thrownValue; // TODO
+    if (isNone(optionInput) || isErr(optionInput)) {
+        return thrownValue;
+    }
+    return optionInput;
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#unwrap-err
  */
 export function unwrapErr(responseInput, thrownValue) {
-    return thrownValue; // TODO
+    if (isErr(responseInput)) {
+        return responseInput.value;
+    }
+    return thrownValue;
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#unwrap-err-panic
  */
 export function unwrapErrPanic(responseInput) {
-    if (responseInput instanceof Err) {
+    if (isErr(responseInput)) {
         return responseInput.value;
     }
     throw new Panic("unwrapErrPanic");
@@ -306,10 +312,7 @@ export function unwrapErrPanic(responseInput) {
  * @link https://docs.blockstack.org/references/language-clarity#unwrap-panic
  */
 export function unwrapPanic(optionInput) {
-    if (optionInput === none) {
-        throw new Panic("unwrapPanic");
-    }
-    if (optionInput instanceof Err) {
+    if (isNone(optionInput) || isErr(optionInput)) {
         throw new Panic("unwrapPanic");
     }
     return optionInput;
