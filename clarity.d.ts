@@ -160,7 +160,7 @@ export declare function toUint(value: int): uint;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#try
  */
-export declare function tryUnwrap<A, B>(optionInput: optional<A> | response<A, B>): A;
+export declare function tryUnwrap<A, B>(optionInput: optional<A> | response<A, B>): A | B | null;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#tx-sender
  */

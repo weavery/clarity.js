@@ -273,7 +273,13 @@ export function toUint(value) {
  * @link https://docs.blockstack.org/references/language-clarity#try
  */
 export function tryUnwrap(optionInput) {
-    throw new Error("not implemented yet"); // TODO
+    if (isSome(optionInput) || isOk(optionInput)) {
+        return optionInput;
+    }
+    if (isErr(optionInput)) {
+        return optionInput.value; // TODO: local exit
+    }
+    return none; // TODO: local exit
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#tx-sender
@@ -288,7 +294,7 @@ export function unwrap(optionInput, thrownValue) {
     if (isNone(optionInput) || isErr(optionInput)) {
         return thrownValue;
     }
-    return optionInput;
+    return optionInput; // TODO: local exit
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#unwrap-err
@@ -297,7 +303,7 @@ export function unwrapErr(responseInput, thrownValue) {
     if (isErr(responseInput)) {
         return responseInput.value;
     }
-    return thrownValue;
+    return thrownValue; // TODO: local exit
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#unwrap-err-panic

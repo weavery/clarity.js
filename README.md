@@ -56,9 +56,9 @@ Clarity | Type | TypeScript | Status | Notes
 [`some`](https://docs.blockstack.org/references/language-clarity#some) | function | `some()` | ✅ |
 [`to-int`](https://docs.blockstack.org/references/language-clarity#to-int) | function | `toInt()` | 🚧 |
 [`to-uint`](https://docs.blockstack.org/references/language-clarity#to-uint) | function | `toUint()` | 🚧 |
-[`try!`](https://docs.blockstack.org/references/language-clarity#try) | function | `tryUnwrap<A, B>()` | 🚧 |
+[`try!`](https://docs.blockstack.org/references/language-clarity#try) | syntax | `tryUnwrap<A, B>()` | ✅ |
 [`tx-sender`](https://docs.blockstack.org/references/language-clarity#tx-sender) | keyword | `txSender()` | 🚧 |
-[`unwrap!`](https://docs.blockstack.org/references/language-clarity#unwrap) | function | `unwrap<A, B>()` | ✅ |
-[`unwrap-err!`](https://docs.blockstack.org/references/language-clarity#unwrap-err) | function | `unwrapErr<A, B>()` | ✅ |
+[`unwrap!`](https://docs.blockstack.org/references/language-clarity#unwrap) | syntax | `unwrap<A, B>()` | ✅ |
+[`unwrap-err!`](https://docs.blockstack.org/references/language-clarity#unwrap-err) | syntax | `unwrapErr<A, B>()` | ✅ |
 [`unwrap-err-panic`](https://docs.blockstack.org/references/language-clarity#unwrap-err-panic) | function | `unwrapErrPanic<A, B>()` | ✅ |
 [`unwrap-panic`](https://docs.blockstack.org/references/language-clarity#unwrap-panic) | function | `unwrapPanic<A, B>()` | ✅ |

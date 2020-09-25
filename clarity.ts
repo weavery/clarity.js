@@ -324,8 +324,14 @@ export function toUint(value: int): uint {
 /**
  * @link https://docs.blockstack.org/references/language-clarity#try
  */
-export function tryUnwrap<A, B>(optionInput: optional<A> | response<A, B>): A {
-  throw new Error("not implemented yet")  // TODO
+export function tryUnwrap<A, B>(optionInput: optional<A> | response<A, B>): A | B | null {
+  if (isSome(optionInput) || isOk(optionInput)) {
+    return optionInput
+  }
+  if (isErr(optionInput)) {
+    return (optionInput as Err<B>).value  // TODO: local exit
+  }
+  return none  // TODO: local exit
 }
 
 /**
@@ -342,7 +348,7 @@ export function unwrap<A, B>(optionInput: optional<A> | response<A, B>, thrownVa
   if (isNone(optionInput) || isErr(optionInput)) {
     return thrownValue
   }
-  return optionInput
+  return optionInput  // TODO: local exit
 }
 
 /**
@@ -352,7 +358,7 @@ export function unwrapErr<A, B>(responseInput: response<A, B>, thrownValue: B): 
   if (isErr(responseInput)) {
     return (responseInput as Err<B>).value
   }
-  return thrownValue
+  return thrownValue  // TODO: local exit
 }
 
 /**

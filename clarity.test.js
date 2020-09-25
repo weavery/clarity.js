@@ -195,7 +195,10 @@ test('toUint', () => {
 })
 
 test('tryUnwrap', () => {
-  // TODO
+  expect(clarity.tryUnwrap(clarity.some(42))).toBe(42)
+  expect(clarity.tryUnwrap(clarity.none)).toBe(clarity.none)
+  expect(clarity.tryUnwrap(clarity.ok(42))).toBe(42)
+  expect(clarity.tryUnwrap(clarity.err(42))).toEqual(clarity.err(42))
 })
 
 test('txSender', () => {
