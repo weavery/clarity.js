@@ -101,6 +101,12 @@ export function contractOf(contractName) {
     return ""; // TODO
 }
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#default-to
+ */
+export function defaultTo(defaultValue, optionValue) {
+    return optionValue !== null && optionValue !== void 0 ? optionValue : defaultValue;
+}
+/**
  * @link https://docs.blockstack.org/references/language-clarity#err
  */
 export function err(value) {

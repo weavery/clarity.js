@@ -128,6 +128,13 @@ export function contractOf(contractName: trait): principal {
 }
 
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#default-to
+ */
+export function defaultTo<T>(defaultValue: T, optionValue: optional<T>): T {
+  return optionValue ?? defaultValue
+}
+
+/**
  * @link https://docs.blockstack.org/references/language-clarity#err
  */
 export function err<T>(value: T) {

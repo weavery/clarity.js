@@ -55,6 +55,10 @@ export declare function contractCaller(): principal;
  */
 export declare function contractOf(contractName: trait): principal;
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#default-to
+ */
+export declare function defaultTo<T>(defaultValue: T, optionValue: optional<T>): T;
+/**
  * @link https://docs.blockstack.org/references/language-clarity#err
  */
 export declare function err<T>(value: T): Err<T>;

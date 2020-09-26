@@ -48,6 +48,11 @@ test('contractOf', () => {
   // TODO
 })
 
+test('defaultTo', () => {
+  expect(clarity.defaultTo(2, clarity.some(1))).toEqual(1)
+  expect(clarity.defaultTo(2, clarity.none)).toEqual(2)
+})
+
 test('err', () => {
   expect(clarity.err(1)).toEqual(new clarity.Err(1))
 })
