@@ -101,7 +101,7 @@ export function append(list, value) {
  * @link https://docs.blockstack.org/references/language-clarity#as-contract
  */
 export function asContract(expr) {
-    return expr(); // TODO
+    throw new Error("not implemented yet"); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#as-max-len
@@ -113,7 +113,7 @@ export function asMaxLen(value, length) {
  * @link https://docs.blockstack.org/references/language-clarity#at-block
  */
 export function atBlock(blockHash, expr) {
-    return expr(); // TODO
+    throw new Error("not implemented yet"); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#block-height
@@ -146,13 +146,13 @@ export function contractCall(contractName, functionName, ...args) {
  * @link https://docs.blockstack.org/references/language-clarity#contract-caller
  */
 export function contractCaller() {
-    return ""; // TODO
+    throw new Error("not implemented yet"); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#contract-of
  */
 export function contractOf(contractName) {
-    return ""; // TODO
+    throw new Error("not implemented yet"); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#default-to
@@ -188,7 +188,7 @@ export function fold(func, list, initialValue) {
  * @link https://docs.blockstack.org/references/language-clarity#ft-get-balance
  */
 export function ftGetBalance(tokenName, principal) {
-    return 0; // TODO
+    throw new Error("not implemented yet"); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#ft-mint
@@ -212,7 +212,7 @@ export function get(keyName, tuple) {
  * @link https://docs.blockstack.org/references/language-clarity#get-block-info
  */
 export function getBlockInfo(propName, blockHeight) {
-    return none; // TODO
+    throw new Error("not implemented yet"); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#hash160
@@ -337,7 +337,7 @@ export function mod(a, b) {
  * @link https://docs.blockstack.org/references/language-clarity#nft-get-owner
  */
 export function nftGetOwner(assetClass, assetID) {
-    return none; // TODO
+    throw new Error("not implemented yet"); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#nft-mint
@@ -440,7 +440,7 @@ export function tuple(...pairs) {
  * @link https://docs.blockstack.org/references/language-clarity#tx-sender
  */
 export function txSender() {
-    return ""; // TODO
+    throw new Error("not implemented yet"); // TODO
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#unwrap
