@@ -176,6 +176,13 @@ test('mapSet', () => {
   expect(clarity.mapSet(names, key, val)).toEqual(true)
 })
 
+test('mod', () => {
+  expect(clarity.mod(2, 3)).toEqual(2)
+  expect(clarity.mod(5, 2)).toEqual(1)
+  expect(clarity.mod(7, 1)).toEqual(0)
+  expect(() => clarity.mod(7, 0)).toThrow(RangeError)
+})
+
 test('nftGetOwner', () => {
   // TODO
 })
@@ -194,6 +201,12 @@ test('none', () => {
 
 test('ok', () => {
   expect(clarity.ok(1)).toEqual(1)
+})
+
+test('pow', () => {
+  expect(clarity.pow(2, 3)).toEqual(8)
+  expect(clarity.pow(2, 2)).toEqual(4)
+  expect(clarity.pow(7, 1)).toEqual(7)
 })
 
 test('print', () => {
@@ -283,4 +296,9 @@ test('unwrapPanic', () => {
   expect(clarity.unwrapPanic(clarity.ok(42))).toBe(42)
   expect(() => clarity.unwrapPanic(clarity.none)).toThrow(clarity.Panic)
   expect(() => clarity.unwrapPanic(clarity.err(1))).toThrow(clarity.Panic)
+})
+
+test('xor', () => {
+  expect(clarity.xor(1, 2)).toEqual(3)
+  expect(clarity.xor(120, 280)).toEqual(352)
 })

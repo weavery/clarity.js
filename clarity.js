@@ -258,6 +258,16 @@ export function mapSet(map, key, value) {
     return true;
 }
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#mod
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder
+ */
+export function mod(a, b) {
+    if (b === 0) {
+        throw new RangeError("division by zero");
+    }
+    return a % b;
+}
+/**
  * @link https://docs.blockstack.org/references/language-clarity#nft-get-owner
  */
 export function nftGetOwner(assetClass, assetID) {
@@ -284,6 +294,13 @@ export const none = null;
  */
 export function ok(value) {
     return value;
+}
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#pow
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Exponentiation
+ */
+export function pow(a, b) {
+    return Math.pow(a, b); // TODO: handle overflow
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#print
@@ -381,4 +398,11 @@ export function unwrapPanic(optionInput) {
         throw new Panic("unwrapPanic");
     }
     return optionInput;
+}
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#xor
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_XOR
+ */
+export function xor(a, b) {
+    return a ^ b;
 }

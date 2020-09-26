@@ -52,11 +52,13 @@ Clarity | Type | TypeScript | Status | Notes
 [`map-get?`](https://docs.blockstack.org/references/language-clarity#map-get) | function | `mapGet()` | ✅ |
 [`map-insert`](https://docs.blockstack.org/references/language-clarity#map-insert) | function | `mapInsert()` | ✅ |
 [`map-set`](https://docs.blockstack.org/references/language-clarity#map-set) | function | `mapSet()` | ✅ |
+[`mod`](https://docs.blockstack.org/references/language-clarity#mod) | function | `mod()` | ✅ |
 [`nft-get-owner?`](https://docs.blockstack.org/references/language-clarity#nft-get-owner) | function | `nftGetOwner()` | 🚧 |
 [`nft-mint?`](https://docs.blockstack.org/references/language-clarity#nft-mint) | function | `nftMint()` | 🚧 |
 [`nft-transfer?`](https://docs.blockstack.org/references/language-clarity#nft-transfer) | function | `nftTransfer()` | 🚧 |
 [`none`](https://docs.blockstack.org/references/language-clarity#none) | constant | `none` | ✅ |
 [`ok`](https://docs.blockstack.org/references/language-clarity#ok) | function | `ok<T, E>()` | ✅ |
+[`pow`](https://docs.blockstack.org/references/language-clarity#pow) | function | `pow()` | ✅ |
 [`print`](https://docs.blockstack.org/references/language-clarity#print) | function | `print<T>()` | ✅ |
 [`sha256`](https://docs.blockstack.org/references/language-clarity#sha256) | function | `sha256()` | ✅ |
 [`sha512`](https://docs.blockstack.org/references/language-clarity#sha512) | function | `sha512()` | ✅ |
@@ -70,3 +72,4 @@ Clarity | Type | TypeScript | Status | Notes
 [`unwrap-err!`](https://docs.blockstack.org/references/language-clarity#unwrap-err) | syntax | `unwrapErr<A, B>()` | ✅ |
 [`unwrap-err-panic`](https://docs.blockstack.org/references/language-clarity#unwrap-err-panic) | function | `unwrapErrPanic<A, B>()` | ✅ |
 [`unwrap-panic`](https://docs.blockstack.org/references/language-clarity#unwrap-panic) | function | `unwrapPanic<A, B>()` | ✅ |
+[`xor`](https://docs.blockstack.org/references/language-clarity#xor) | function | `xor()` | ✅ |

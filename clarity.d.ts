@@ -139,6 +139,11 @@ export declare function mapInsert(map: Map<tuple, tuple>, key: tuple, value: tup
  */
 export declare function mapSet(map: Map<tuple, tuple>, key: tuple, value: tuple): bool;
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#mod
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder
+ */
+export declare function mod(a: int | uint, b: int | uint): int | uint;
+/**
  * @link https://docs.blockstack.org/references/language-clarity#nft-get-owner
  */
 export declare function nftGetOwner(assetClass: string, assetID: string): optional<principal>;
@@ -158,6 +163,11 @@ export declare const none: any;
  * @link https://docs.blockstack.org/references/language-clarity#ok
  */
 export declare function ok<T, E>(value: T): response<T, E>;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#pow
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Exponentiation
+ */
+export declare function pow(a: int | uint, b: int | uint): int | uint;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#print
  */
@@ -210,4 +220,9 @@ export declare function unwrapErrPanic<A, B>(responseInput: response<A, B>): B;
  * @link https://docs.blockstack.org/references/language-clarity#unwrap-panic
  */
 export declare function unwrapPanic<A, B>(optionInput: optional<A> | response<A, B>): A;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#xor
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_XOR
+ */
+export declare function xor(a: int | uint, b: int | uint): int | uint;
 export {};
