@@ -67,6 +67,62 @@ export function requireFeature(feature: string): void {
 }
 
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#-add
+ */
+export function add(...args: int[] | uint[]): int | uint {
+  return args.reduce((sum, operand) => sum + operand, 0)
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#--subtract
+ */
+export function sub(...args: int[] | uint[]): int | uint {
+  return args.slice(1).reduce((difference, operand) => difference - operand, args[0])
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#-multiply
+ */
+export function mul(...args: int[] | uint[]): int | uint {
+  return args.reduce((product, operand) => product * operand, 1)
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#-divide
+ */
+export function div(...args: int[] | uint[]): int | uint {
+  return Math.trunc(args.slice(1).reduce((quotient, operand) => quotient / operand, args[0]))
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#-less-than
+ */
+export function lt<T>(a: T, b: T): bool {
+  return a < b
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#-less-than-or-equal
+ */
+export function le<T>(a: T, b: T): bool {
+  return a <= b
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#-greater-than
+ */
+export function gt<T>(a: T, b: T): bool {
+  return a > b
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#-greater-than-or-equal
+ */
+export function ge<T>(a: T, b: T): bool {
+  return a >= b
+}
+
+/**
  * @link https://docs.blockstack.org/references/language-clarity#append
  */
 export function append<T>(list: list<T>, value: T): list<T> {
@@ -84,7 +140,7 @@ export function asContract<A>(expr: expr<A>): A {
  * @link https://docs.blockstack.org/references/language-clarity#as-max-len
  */
 export function asMaxLen<T extends Seq>(value: T, length: uint): optional<T> {
-  return value.length <= length ? some(value) : none;
+  return value.length <= length ? some(value) : none
 }
 
 /**

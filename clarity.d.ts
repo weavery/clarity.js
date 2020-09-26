@@ -26,6 +26,38 @@ export declare class Err<T> extends Error {
 export declare function requireVersion(version: string): void;
 export declare function requireFeature(feature: string): void;
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#-add
+ */
+export declare function add(...args: int[] | uint[]): int | uint;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#--subtract
+ */
+export declare function sub(...args: int[] | uint[]): int | uint;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#-multiply
+ */
+export declare function mul(...args: int[] | uint[]): int | uint;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#-divide
+ */
+export declare function div(...args: int[] | uint[]): int | uint;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#-less-than
+ */
+export declare function lt<T>(a: T, b: T): bool;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#-less-than-or-equal
+ */
+export declare function le<T>(a: T, b: T): bool;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#-greater-than
+ */
+export declare function gt<T>(a: T, b: T): bool;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#-greater-than-or-equal
+ */
+export declare function ge<T>(a: T, b: T): bool;
+/**
  * @link https://docs.blockstack.org/references/language-clarity#append
  */
 export declare function append<T>(list: list<T>, value: T): list<T>;

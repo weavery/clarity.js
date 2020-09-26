@@ -23,6 +23,14 @@ Clarity | Type | TypeScript | JavaScript | Notes
 
 Clarity | Type | TypeScript | Status | Notes
 ------- | ---- | ---------- | ------ | -----
+[`*`](https://docs.blockstack.org/references/language-clarity#-multiply) | function | `mul()` | ✅ |
+[`+`](https://docs.blockstack.org/references/language-clarity#-add) | function | `add()` | ✅ |
+[`-`](https://docs.blockstack.org/references/language-clarity#--subtract) | function | `sub()` | ✅ |
+[`/`](https://docs.blockstack.org/references/language-clarity#-divide) | function | `div()` | ✅ |
+[`<`](https://docs.blockstack.org/references/language-clarity#-less-than) | function | `lt<T>()` | ✅ |
+[`<=`](https://docs.blockstack.org/references/language-clarity#-less-than-or-equal) | function | `le<T>()` | ✅ |
+[`>`](https://docs.blockstack.org/references/language-clarity#-greater-than) | function | `gt<T>()` | ✅ |
+[`>=`](https://docs.blockstack.org/references/language-clarity#-greater-than-or-equal) | function | `ge<T>()` | ✅ |
 [`append`](https://docs.blockstack.org/references/language-clarity#append) | function | `append()` | ✅ |
 [`as-contract`](https://docs.blockstack.org/references/language-clarity#as-contract) | syntax | `asContract<A>()` | 🚧 |
 [`as-max-len?`](https://docs.blockstack.org/references/language-clarity#as-max-len) | syntax | `asMaxLen<T>()` | ✅ |

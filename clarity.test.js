@@ -2,6 +2,47 @@
 
 import * as clarity from './clarity.js'
 
+test('add', () => {
+  expect(clarity.add(1, 2, 3)).toEqual(6)
+})
+
+test('sub', () => {
+  expect(clarity.sub(2, 1, 1)).toEqual(0)
+  expect(clarity.sub(0, 3)).toEqual(-3)
+})
+
+test('mul', () => {
+  expect(clarity.mul(2, 3)).toEqual(6)
+  expect(clarity.mul(5, 2)).toEqual(10)
+  expect(clarity.mul(2, 2, 2)).toEqual(8)
+})
+
+test('div', () => {
+  expect(clarity.div(2, 3)).toEqual(0)
+  expect(clarity.div(5, 2)).toEqual(2)
+  expect(clarity.div(4, 2, 2)).toEqual(1)
+})
+
+test('lt', () => {
+  expect(clarity.lt(1, 2)).toBe(true)
+  expect(clarity.lt(5, 2)).toBe(false)
+})
+
+test('le', () => {
+  expect(clarity.le(1, 1)).toBe(true)
+  expect(clarity.le(5, 2)).toBe(false)
+})
+
+test('gt', () => {
+  expect(clarity.gt(1, 2)).toBe(false)
+  expect(clarity.gt(5, 2)).toBe(true)
+})
+
+test('ge', () => {
+  expect(clarity.ge(1, 1)).toBe(true)
+  expect(clarity.ge(5, 2)).toBe(true)
+})
+
 test('append', () => {
   expect(clarity.append([], 1)).toEqual([1])
   expect(clarity.append([1], 2)).toEqual([1, 2])

@@ -44,6 +44,54 @@ export function requireFeature(feature) {
     // TODO: throw an error if the feature isn't supported
 }
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#-add
+ */
+export function add(...args) {
+    return args.reduce((sum, operand) => sum + operand, 0);
+}
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#--subtract
+ */
+export function sub(...args) {
+    return args.slice(1).reduce((difference, operand) => difference - operand, args[0]);
+}
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#-multiply
+ */
+export function mul(...args) {
+    return args.reduce((product, operand) => product * operand, 1);
+}
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#-divide
+ */
+export function div(...args) {
+    return Math.trunc(args.slice(1).reduce((quotient, operand) => quotient / operand, args[0]));
+}
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#-less-than
+ */
+export function lt(a, b) {
+    return a < b;
+}
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#-less-than-or-equal
+ */
+export function le(a, b) {
+    return a <= b;
+}
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#-greater-than
+ */
+export function gt(a, b) {
+    return a > b;
+}
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#-greater-than-or-equal
+ */
+export function ge(a, b) {
+    return a >= b;
+}
+/**
  * @link https://docs.blockstack.org/references/language-clarity#append
  */
 export function append(list, value) {
