@@ -10,6 +10,9 @@ declare type response<T, E> = T | err<E>;
 declare type trait = string;
 declare type tuple = Map<String, any>;
 declare type uint = number;
+interface Seq {
+    length: uint;
+}
 export declare class Panic<T> extends Error {
     constructor(message: string);
 }
@@ -30,6 +33,10 @@ export declare function append<T>(list: list<T>, value: T): list<T>;
  * @link https://docs.blockstack.org/references/language-clarity#as-contract
  */
 export declare function asContract<A>(expr: expr<A>): A;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#as-max-len
+ */
+export declare function asMaxLen<T extends Seq>(value: T, length: uint): optional<T>;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#at-block
  */

@@ -16,6 +16,10 @@ type trait = string
 type tuple = Map<String, any>
 type uint = number
 
+interface Seq {
+  length: uint
+}
+
 function hash(algorithm: string, value: buff | uint | int): buff {
   if (Number.isInteger(value)) {
     let buff = new Uint8Array(16)  // 128 bits
@@ -74,6 +78,13 @@ export function append<T>(list: list<T>, value: T): list<T> {
  */
 export function asContract<A>(expr: expr<A>): A {
   return expr()  // TODO
+}
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#as-max-len
+ */
+export function asMaxLen<T extends Seq>(value: T, length: uint): optional<T> {
+  return value.length <= length ? some(value) : none;
 }
 
 /**

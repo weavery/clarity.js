@@ -12,6 +12,11 @@ test('asContract', () => {
   // TODO
 })
 
+test('asMaxLen', () => {
+  expect(clarity.asMaxLen(clarity.list(2, 2, 2), 3)).toEqual(clarity.some(clarity.list(2, 2, 2)))
+  expect(clarity.asMaxLen(clarity.list(1, 2, 3), 2)).toEqual(clarity.none)
+})
+
 test('atBlock', () => {
   // TODO
 })

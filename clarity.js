@@ -56,6 +56,12 @@ export function asContract(expr) {
     return expr(); // TODO
 }
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#as-max-len
+ */
+export function asMaxLen(value, length) {
+    return value.length <= length ? some(value) : none;
+}
+/**
  * @link https://docs.blockstack.org/references/language-clarity#at-block
  */
 export function atBlock(blockHash, expr) {
