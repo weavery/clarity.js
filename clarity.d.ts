@@ -115,6 +115,10 @@ export declare function isSome(value: any): bool;
  */
 export declare function keccak256(value: buff | uint | int): buff;
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#list
+ */
+export declare function list<T>(...values: T[]): T[];
+/**
  * @link https://docs.blockstack.org/references/language-clarity#map
  */
 export declare function map<A, B>(func: (a: A) => B, list: list<A>): list<B>;

@@ -126,6 +126,11 @@ test('keccak256', () => {
   expect(clarity.keccak256(input)).toEqual(expected)
 })
 
+test('list', () => {
+  expect(clarity.list(1, 2, 3)).toEqual([1, 2, 3])
+  expect(() => clarity.list(1, 2, "3")).toThrow(TypeError)
+})
+
 test('map', () => {
   expect(clarity.map((x) => !x, [true, false, true, false])).toEqual([false, true, false, true])
 })

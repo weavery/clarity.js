@@ -211,6 +211,15 @@ export function keccak256(value) {
     return hash('keccak256', value);
 }
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#list
+ */
+export function list(...values) {
+    if (values.length > 0 && values.some((value) => typeof value !== typeof values[0])) {
+        throw new TypeError();
+    }
+    return values;
+}
+/**
  * @link https://docs.blockstack.org/references/language-clarity#map
  */
 export function map(func, list) {

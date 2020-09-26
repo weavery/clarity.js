@@ -253,6 +253,16 @@ export function keccak256(value: buff | uint | int): buff {
 }
 
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#list
+ */
+export function list<T>(...values: T[]): T[] {
+  if (values.length > 0 && values.some((value) => typeof value !== typeof values[0])) {
+    throw new TypeError()
+  }
+  return values
+}
+
+/**
  * @link https://docs.blockstack.org/references/language-clarity#map
  */
 export function map<A, B>(func: (a: A) => B, list: list<A>): list<B> {

@@ -46,6 +46,7 @@ Clarity | Type | TypeScript | Status | Notes
 [`is-ok`](https://docs.blockstack.org/references/language-clarity#is-ok) | function | `isOk()` | ✅ |
 [`is-some`](https://docs.blockstack.org/references/language-clarity#is-some) | function | `isSome()` | ✅ |
 [`keccak256`](https://docs.blockstack.org/references/language-clarity#keccak256) | function | `keccak256()` | ✅ |
+[`list`](https://docs.blockstack.org/references/language-clarity#list) | function | `list<T>()` | ✅ |
 [`map`](https://docs.blockstack.org/references/language-clarity#map) | function | `map<A, B>()` | ✅ |
 [`map-delete`](https://docs.blockstack.org/references/language-clarity#map-delete) | function | `mapDelete()` | ✅ |
 [`map-get?`](https://docs.blockstack.org/references/language-clarity#map-get) | function | `mapGet()` | ✅ |
