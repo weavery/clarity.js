@@ -133,7 +133,7 @@ export function append<T>(list: list<T>, value: T): list<T> {
  * @link https://docs.blockstack.org/references/language-clarity#as-contract
  */
 export function asContract<A>(expr: expr<A>): A {
-  return expr()  // TODO
+  throw new Error("not implemented yet")  // TODO
 }
 
 /**
@@ -147,7 +147,7 @@ export function asMaxLen<T extends Seq>(value: T, length: uint): optional<T> {
  * @link https://docs.blockstack.org/references/language-clarity#at-block
  */
 export function atBlock<A>(blockHash: buff, expr: expr<A>): A {
-  return expr()  // TODO
+  throw new Error("not implemented yet")  // TODO
 }
 
 /**
@@ -184,14 +184,14 @@ export function contractCall<A, B>(contractName: trait, functionName: string, ..
  * @link https://docs.blockstack.org/references/language-clarity#contract-caller
  */
 export function contractCaller(): principal {
-  return ""  // TODO
+  throw new Error("not implemented yet")  // TODO
 }
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#contract-of
  */
 export function contractOf(contractName: trait): principal {
-  return ""  // TODO
+  throw new Error("not implemented yet")  // TODO
 }
 
 /**
@@ -232,7 +232,7 @@ export function fold<A, B>(func: (a: A, b: B) => B, list: list<A>, initialValue:
  * @link https://docs.blockstack.org/references/language-clarity#ft-get-balance
  */
 export function ftGetBalance(tokenName: string, principal: principal): uint {
-  return 0  // TODO
+  throw new Error("not implemented yet")  // TODO
 }
 
 /**
@@ -260,7 +260,7 @@ export function get<T>(keyName: string, tuple: tuple | optional<tuple>): T | opt
  * @link https://docs.blockstack.org/references/language-clarity#get-block-info
  */
 export function getBlockInfo(propName: string, blockHeight: uint): optional<buff> | optional<uint> {
-  return none  // TODO
+  throw new Error("not implemented yet")  // TODO
 }
 
 /**
@@ -400,7 +400,7 @@ export function mod(a: int | uint, b: int | uint): int | uint {
  * @link https://docs.blockstack.org/references/language-clarity#nft-get-owner
  */
 export function nftGetOwner(assetClass: string, assetID: string): optional<principal> {
-  return none  // TODO
+  throw new Error("not implemented yet")  // TODO
 }
 
 /**
@@ -519,7 +519,7 @@ export function tuple(...pairs: Array<any>[]): tuple {
  * @link https://docs.blockstack.org/references/language-clarity#tx-sender
  */
 export function txSender(): principal {
-  return ""  // TODO
+  throw new Error("not implemented yet")  // TODO
 }
 
 /**
