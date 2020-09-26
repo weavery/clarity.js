@@ -221,6 +221,10 @@ export declare function toUint(value: int): uint;
  */
 export declare function tryUnwrap<A, B>(optionInput: optional<A> | response<A, B>): A | B | null;
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#tuple
+ */
+export declare function tuple(...pairs: Array<any>[]): tuple;
+/**
  * @link https://docs.blockstack.org/references/language-clarity#tx-sender
  */
 export declare function txSender(): principal;

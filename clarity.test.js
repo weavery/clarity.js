@@ -294,6 +294,11 @@ test('tryUnwrap', () => {
   expect(clarity.tryUnwrap(clarity.err(42))).toEqual(clarity.err(42))
 })
 
+test('tuple', () => {
+  expect(clarity.tuple(["name", "blockstack"], ["id", 1337]))
+    .toEqual(new Map(Object.entries({"name": "blockstack", "id": 1337})))
+})
+
 test('txSender', () => {
   // TODO
 })

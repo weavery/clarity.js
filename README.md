@@ -71,6 +71,7 @@ Clarity | Type | TypeScript | Status | Notes
 [`to-int`](https://docs.blockstack.org/references/language-clarity#to-int) | function | `toInt()` | 🚧 |
 [`to-uint`](https://docs.blockstack.org/references/language-clarity#to-uint) | function | `toUint()` | 🚧 |
 [`try!`](https://docs.blockstack.org/references/language-clarity#try) | syntax | `tryUnwrap<A, B>()` | ✅ |
+[`tuple`](https://docs.blockstack.org/references/language-clarity#tuple) | function | `tuple()` | ✅ |
 [`tx-sender`](https://docs.blockstack.org/references/language-clarity#tx-sender) | keyword | `txSender()` | 🚧 |
 [`unwrap!`](https://docs.blockstack.org/references/language-clarity#unwrap) | syntax | `unwrap<A, B>()` | ✅ |
 [`unwrap-err!`](https://docs.blockstack.org/references/language-clarity#unwrap-err) | syntax | `unwrapErr<A, B>()` | ✅ |

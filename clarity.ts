@@ -453,6 +453,13 @@ export function tryUnwrap<A, B>(optionInput: optional<A> | response<A, B>): A | 
 }
 
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#tuple
+ */
+export function tuple(...pairs: Array<any>[]): tuple {
+  return pairs.reduce((tuple, [k, v]) => tuple.set(k, v), new Map())
+}
+
+/**
  * @link https://docs.blockstack.org/references/language-clarity#tx-sender
  */
 export function txSender(): principal {

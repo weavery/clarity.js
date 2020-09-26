@@ -383,6 +383,12 @@ export function tryUnwrap(optionInput) {
     return none; // TODO: local exit
 }
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#tuple
+ */
+export function tuple(...pairs) {
+    return pairs.reduce((tuple, [k, v]) => tuple.set(k, v), new Map());
+}
+/**
  * @link https://docs.blockstack.org/references/language-clarity#tx-sender
  */
 export function txSender() {
