@@ -126,6 +126,11 @@ test('keccak256', () => {
   expect(clarity.keccak256(input)).toEqual(expected)
 })
 
+test('len', () => {
+  expect(clarity.len("blockstack")).toEqual(10)
+  expect(clarity.len(clarity.list(1, 2, 3, 4, 5))).toEqual(5)
+})
+
 test('list', () => {
   expect(clarity.list(1, 2, 3)).toEqual([1, 2, 3])
   expect(() => clarity.list(1, 2, "3")).toThrow(TypeError)
@@ -197,6 +202,11 @@ test('nftTransfer', () => {
 
 test('none', () => {
   expect(clarity.none).toEqual(null)
+})
+
+test('not', () => {
+  expect(clarity.not(true)).toBe(false)
+  expect(clarity.not(false)).toBe(true)
 })
 
 test('ok', () => {

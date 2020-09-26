@@ -46,6 +46,7 @@ Clarity | Type | TypeScript | Status | Notes
 [`is-ok`](https://docs.blockstack.org/references/language-clarity#is-ok) | function | `isOk()` | ✅ |
 [`is-some`](https://docs.blockstack.org/references/language-clarity#is-some) | function | `isSome()` | ✅ |
 [`keccak256`](https://docs.blockstack.org/references/language-clarity#keccak256) | function | `keccak256()` | ✅ |
+[`len`](https://docs.blockstack.org/references/language-clarity#len) | function | `len<T>()` | ✅ |
 [`list`](https://docs.blockstack.org/references/language-clarity#list) | function | `list<T>()` | ✅ |
 [`map`](https://docs.blockstack.org/references/language-clarity#map) | function | `map<A, B>()` | ✅ |
 [`map-delete`](https://docs.blockstack.org/references/language-clarity#map-delete) | function | `mapDelete()` | ✅ |
@@ -57,6 +58,7 @@ Clarity | Type | TypeScript | Status | Notes
 [`nft-mint?`](https://docs.blockstack.org/references/language-clarity#nft-mint) | function | `nftMint()` | 🚧 |
 [`nft-transfer?`](https://docs.blockstack.org/references/language-clarity#nft-transfer) | function | `nftTransfer()` | 🚧 |
 [`none`](https://docs.blockstack.org/references/language-clarity#none) | constant | `none` | ✅ |
+[`not`](https://docs.blockstack.org/references/language-clarity#not) | function | `not()` | ✅ |
 [`ok`](https://docs.blockstack.org/references/language-clarity#ok) | function | `ok<T, E>()` | ✅ |
 [`pow`](https://docs.blockstack.org/references/language-clarity#pow) | function | `pow()` | ✅ |
 [`print`](https://docs.blockstack.org/references/language-clarity#print) | function | `print<T>()` | ✅ |

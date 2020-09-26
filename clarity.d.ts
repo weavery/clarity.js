@@ -115,6 +115,10 @@ export declare function isSome(value: any): bool;
  */
 export declare function keccak256(value: buff | uint | int): buff;
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#len
+ */
+export declare function len<T>(value: list<T> | buff | string): uint;
+/**
  * @link https://docs.blockstack.org/references/language-clarity#list
  */
 export declare function list<T>(...values: T[]): T[];
@@ -159,6 +163,11 @@ export declare function nftTransfer(assetClass: string, assetID: string, sender:
  * @link https://docs.blockstack.org/references/language-clarity#none
  */
 export declare const none: any;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#not
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_NOT
+ */
+export declare function not(value: bool): bool;
 /**
  * @link https://docs.blockstack.org/references/language-clarity#ok
  */

@@ -253,6 +253,13 @@ export function keccak256(value: buff | uint | int): buff {
 }
 
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#len
+ */
+export function len<T>(value: list<T> | buff | string): uint {
+  return value.length
+}
+
+/**
  * @link https://docs.blockstack.org/references/language-clarity#list
  */
 export function list<T>(...values: T[]): T[] {
@@ -340,6 +347,14 @@ export function nftTransfer(assetClass: string, assetID: string, sender: princip
  * @link https://docs.blockstack.org/references/language-clarity#none
  */
 export const none: any = null
+
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#not
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_NOT
+ */
+export function not(value: bool): bool {
+  return !value
+}
 
 /**
  * @link https://docs.blockstack.org/references/language-clarity#ok

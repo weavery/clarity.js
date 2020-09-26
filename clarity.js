@@ -211,6 +211,12 @@ export function keccak256(value) {
     return hash('keccak256', value);
 }
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#len
+ */
+export function len(value) {
+    return value.length;
+}
+/**
  * @link https://docs.blockstack.org/references/language-clarity#list
  */
 export function list(...values) {
@@ -289,6 +295,13 @@ export function nftTransfer(assetClass, assetID, sender, recipient) {
  * @link https://docs.blockstack.org/references/language-clarity#none
  */
 export const none = null;
+/**
+ * @link https://docs.blockstack.org/references/language-clarity#not
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_NOT
+ */
+export function not(value) {
+    return !value;
+}
 /**
  * @link https://docs.blockstack.org/references/language-clarity#ok
  */
