@@ -3,6 +3,15 @@
 [![Project license](https://img.shields.io/badge/license-Public%20Domain-blue.svg)](https://unlicense.org)
 [![Discord](https://img.shields.io/discord/755852964513579099?label=discord)](https://discord.gg/vNF5a3M)
 
+## Acknowledgments
+
+We thank [Arweave] and [Blockstack] for sponsoring the development of this
+project as part of the development of [Sworn].
+
+[Arweave]:    https://arweave.org
+[Blockstack]: https://blockstack.org
+[Sworn]:      https://github.com/weavery/sworn
+
 ## Status
 
 ### Mapping of Clarity types
