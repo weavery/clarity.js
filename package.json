@@ -4,6 +4,16 @@
   "description": "Clarity smart contract runtime for JavaScript.",
   "type": "module",
   "module": "clarity.js",
+  "main": "clarity.cjs",
+  "exports": {
+    ".": [
+      {
+        "require": "./clarity.cjs",
+        "import": "./clarity.js",
+        "default": "./clarity.js"
+      }
+    ]
+  },
   "types": "clarity.d.ts",
   "files": [
     "AUTHORS",
@@ -17,6 +27,9 @@
     "clarity.d.ts"
   ],
   "scripts": {
+    "build:mjs": "tsc -m es2015",
+    "build:cjs": "tsc -m commonjs --esModuleInterop && mv clarity.js clarity.cjs",
+    "build": "npm run build:cjs && npm run build:mjs",
     "test": "jest"
   },
   "keywords": [
