@@ -43,12 +43,12 @@ Clarity | Type | TypeScript | Status | Notes
 [`append`](https://docs.blockstack.org/references/language-clarity#append) | function | `append()` | ✅ |
 [`as-contract`](https://docs.blockstack.org/references/language-clarity#as-contract) | syntax | `asContract<A>()` | ⓐ |
 [`as-max-len?`](https://docs.blockstack.org/references/language-clarity#as-max-len) | syntax | `asMaxLen<T>()` | ✅ |
-[`at-block`](https://docs.blockstack.org/references/language-clarity#at-block) | syntax | `atBlock<A>()` | ❌ |
+[`at-block`](https://docs.blockstack.org/references/language-clarity#at-block) | syntax | `atBlock<A>()` | ❌ | Not supported by SmartWeave.
 [`block-height`](https://docs.blockstack.org/references/language-clarity#block-height) | keyword | `blockHeight()` | ⓐ |
 [`concat`](https://docs.blockstack.org/references/language-clarity#concat) | function | `concat()` | ✅ |
-[`contract-call?`](https://docs.blockstack.org/references/language-clarity#contract-call) | function | `contractCall<A, B>()` | 🚧 |
+[`contract-call?`](https://docs.blockstack.org/references/language-clarity#contract-call) | function | `contractCall<A, B>()` | ❌ | Not supported by SmartWeave.
 [`contract-caller`](https://docs.blockstack.org/references/language-clarity#contract-caller) | keyword | `contractCaller()` | ⓐ |
-[`contract-of`](https://docs.blockstack.org/references/language-clarity#contract-of) | function | `contractOf()` | 🚧 |
+[`contract-of`](https://docs.blockstack.org/references/language-clarity#contract-of) | function | `contractOf()` | ❌ | Not supported by SmartWeave.
 [`default-to`](https://docs.blockstack.org/references/language-clarity#default-to) | function | `defaultTo<T>()` | ✅ |
 [`err`](https://docs.blockstack.org/references/language-clarity#err) | function | `err<T()` | ✅ |
 [`filter`](https://docs.blockstack.org/references/language-clarity#filter) | function | `filter<A>()` | ✅ |
@@ -57,7 +57,7 @@ Clarity | Type | TypeScript | Status | Notes
 [`ft-mint?`](https://docs.blockstack.org/references/language-clarity#ft-mint) | function | `ftMint()` | 🚧 |
 [`ft-transfer?`](https://docs.blockstack.org/references/language-clarity#ft-transfer) | function | `ftTransfer()` | 🚧 |
 [`get`](https://docs.blockstack.org/references/language-clarity#get) | function | `get<T>()` | ✅ |
-[`get-block-info?`](https://docs.blockstack.org/references/language-clarity#get-block-info) | function | `getBlockInfo()` | ❌ |
+[`get-block-info?`](https://docs.blockstack.org/references/language-clarity#get-block-info) | function | `getBlockInfo()` | ❌ | Not supported by SmartWeave.
 [`hash160`](https://docs.blockstack.org/references/language-clarity#hash160) | function | `hash160()` | ✅ |
 [`is-eq`](https://docs.blockstack.org/references/language-clarity#is-eq) | function | `isEq()` | ✅ |
 [`is-err`](https://docs.blockstack.org/references/language-clarity#is-err) | function | `isErr()` | ✅ |

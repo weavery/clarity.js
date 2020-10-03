@@ -112,7 +112,7 @@ test('concat(buff...)', () => {
 })
 
 test('contractCall', () => {
-  // TODO
+  // not supported
 })
 
 test('contractCaller', () => {
@@ -130,7 +130,7 @@ test('contractCaller for SmartWeave', () => {
 })
 
 test('contractOf', () => {
-  // TODO
+  // not supported
 })
 
 test('defaultTo', () => {

@@ -160,7 +160,10 @@ export function asMaxLen<T extends Seq>(value: T, length: uint): optional<T> {
  * @link https://docs.blockstack.org/references/language-clarity#at-block
  */
 export function atBlock<A>(blockHash: buff, expr: expr<A>): A {
-  throw new Error("at-block not supported")
+  if (SmartWeave) {
+    throw new Error("at-block not supported on SmartWeave")
+  }
+  throw new Error("not implemented yet")  // TODO
 }
 
 /**
@@ -193,6 +196,9 @@ export function concat<T>(a: list<T> | buff, b: list<T> | buff): list<T> | buff 
  * @link https://docs.blockstack.org/references/language-clarity#contract-call
  */
 export function contractCall<A, B>(contractName: trait, functionName: string, ...args: any): response<A, B> {
+  if (SmartWeave) {
+    throw new Error("contract-call? not supported on SmartWeave")
+  }
   throw new Error("not implemented yet")  // TODO
 }
 
@@ -210,6 +216,9 @@ export function contractCaller(): principal {
  * @link https://docs.blockstack.org/references/language-clarity#contract-of
  */
 export function contractOf(contractName: trait): principal {
+  if (SmartWeave) {
+    throw new Error("contract-of not supported on SmartWeave")
+  }
   throw new Error("not implemented yet")  // TODO
 }
 
@@ -279,7 +288,10 @@ export function get<T>(keyName: string, tuple: tuple | optional<tuple>): T | opt
  * @link https://docs.blockstack.org/references/language-clarity#get-block-info
  */
 export function getBlockInfo(propName: string, blockHeight: uint): optional<buff> | optional<uint> {
-  throw new Error("get-block-info? not supported")
+  if (SmartWeave) {
+    throw new Error("get-block-info? not supported on SmartWeave")
+  }
+  throw new Error("not implemented yet")  // TODO
 }
 
 /**

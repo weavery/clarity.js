@@ -164,7 +164,10 @@ exports.asMaxLen = asMaxLen;
  * @link https://docs.blockstack.org/references/language-clarity#at-block
  */
 function atBlock(blockHash, expr) {
-    throw new Error("at-block not supported");
+    if (exports.SmartWeave) {
+        throw new Error("at-block not supported on SmartWeave");
+    }
+    throw new Error("not implemented yet"); // TODO
 }
 exports.atBlock = atBlock;
 /**
@@ -197,6 +200,9 @@ exports.concat = concat;
  * @link https://docs.blockstack.org/references/language-clarity#contract-call
  */
 function contractCall(contractName, functionName, ...args) {
+    if (exports.SmartWeave) {
+        throw new Error("contract-call? not supported on SmartWeave");
+    }
     throw new Error("not implemented yet"); // TODO
 }
 exports.contractCall = contractCall;
@@ -214,6 +220,9 @@ exports.contractCaller = contractCaller;
  * @link https://docs.blockstack.org/references/language-clarity#contract-of
  */
 function contractOf(contractName) {
+    if (exports.SmartWeave) {
+        throw new Error("contract-of not supported on SmartWeave");
+    }
     throw new Error("not implemented yet"); // TODO
 }
 exports.contractOf = contractOf;
@@ -283,7 +292,10 @@ exports.get = get;
  * @link https://docs.blockstack.org/references/language-clarity#get-block-info
  */
 function getBlockInfo(propName, blockHeight) {
-    throw new Error("get-block-info? not supported");
+    if (exports.SmartWeave) {
+        throw new Error("get-block-info? not supported on SmartWeave");
+    }
+    throw new Error("not implemented yet"); // TODO
 }
 exports.getBlockInfo = getBlockInfo;
 /**
