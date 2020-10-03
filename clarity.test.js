@@ -1,6 +1,7 @@
 /* This is free and unencumbered software released into the public domain. */
 
-import * as clarity from './clarity.js'
+//import * as clarity from './clarity.js'
+const clarity = require('./clarity.cjs')
 
 test('add', () => {
   expect(clarity.add(1, 2, 3)).toEqual(6)
@@ -63,7 +64,17 @@ test('atBlock', () => {
 })
 
 test('blockHeight', () => {
-  // TODO
+  clarity.SmartWeave = null
+  expect(() => clarity.blockHeight()).toThrow()
+})
+
+test('blockHeight for SmartWeave', () => {
+  clarity.SmartWeave = {
+    block: {
+      height: 42,
+    },
+  };
+  expect(clarity.blockHeight()).toBe(42)
 })
 
 test('concat(list...)', () => {
@@ -87,7 +98,17 @@ test('contractCall', () => {
 })
 
 test('contractCaller', () => {
-  // TODO
+  clarity.SmartWeave = null
+  expect(() => clarity.contractCaller()).toThrow()
+})
+
+test('contractCaller for SmartWeave', () => {
+  clarity.SmartWeave = {
+    transaction: {
+      owner: "contract-caller result",
+    },
+  };
+  expect(clarity.contractCaller()).toEqual("contract-caller result")
 })
 
 test('contractOf', () => {
@@ -341,7 +362,17 @@ test('tuple', () => {
 })
 
 test('txSender', () => {
-  // TODO
+  clarity.SmartWeave = null
+  expect(() => clarity.txSender()).toThrow()
+})
+
+test('txSender for SmartWeave', () => {
+  clarity.SmartWeave = {
+    transaction: {
+      owner: "tx-sender result",
+    },
+  };
+  expect(clarity.txSender()).toEqual("tx-sender result")
 })
 
 test('unwrap', () => {
