@@ -194,7 +194,10 @@ exports.contractCall = contractCall;
  * @link https://docs.blockstack.org/references/language-clarity#contract-caller
  */
 function contractCaller() {
-    throw new Error("not implemented yet"); // TODO
+    if (exports.SmartWeave) {
+        return exports.SmartWeave.transaction.owner;
+    }
+    throw new Error("contract-caller not supported");
 }
 exports.contractCaller = contractCaller;
 /**

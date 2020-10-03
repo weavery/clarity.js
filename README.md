@@ -47,7 +47,7 @@ Clarity | Type | TypeScript | Status | Notes
 [`block-height`](https://docs.blockstack.org/references/language-clarity#block-height) | keyword | `blockHeight()` | ⓐ |
 [`concat`](https://docs.blockstack.org/references/language-clarity#concat) | function | `concat()` | ✅ |
 [`contract-call?`](https://docs.blockstack.org/references/language-clarity#contract-call) | function | `contractCall<A, B>()` | 🚧 |
-[`contract-caller`](https://docs.blockstack.org/references/language-clarity#contract-caller) | keyword | `contractCaller()` | 🚧 |
+[`contract-caller`](https://docs.blockstack.org/references/language-clarity#contract-caller) | keyword | `contractCaller()` | ⓐ |
 [`contract-of`](https://docs.blockstack.org/references/language-clarity#contract-of) | function | `contractOf()` | 🚧 |
 [`default-to`](https://docs.blockstack.org/references/language-clarity#default-to) | function | `defaultTo<T>()` | ✅ |
 [`err`](https://docs.blockstack.org/references/language-clarity#err) | function | `err<T()` | ✅ |

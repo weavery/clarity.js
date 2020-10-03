@@ -189,7 +189,10 @@ export function contractCall<A, B>(contractName: trait, functionName: string, ..
  * @link https://docs.blockstack.org/references/language-clarity#contract-caller
  */
 export function contractCaller(): principal {
-  throw new Error("not implemented yet")  // TODO
+  if (SmartWeave) {
+    return SmartWeave!.transaction.owner
+  }
+  throw new Error("contract-caller not supported")
 }
 
 /**

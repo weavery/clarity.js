@@ -150,7 +150,10 @@ export function contractCall(contractName, functionName, ...args) {
  * @link https://docs.blockstack.org/references/language-clarity#contract-caller
  */
 export function contractCaller() {
-    throw new Error("not implemented yet"); // TODO
+    if (SmartWeave) {
+        return SmartWeave.transaction.owner;
+    }
+    throw new Error("contract-caller not supported");
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#contract-of
