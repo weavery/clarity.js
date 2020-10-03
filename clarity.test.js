@@ -51,7 +51,22 @@ test('append', () => {
 })
 
 test('asContract', () => {
-  // TODO
+  clarity.SmartWeave = null
+  expect(() => clarity.asContract(() => clarity.txSender())).toThrow()
+})
+
+test('asContract for SmartWeave', () => {
+  clarity.SmartWeave = {
+    transaction: {
+      owner: "transaction sender",
+    },
+    contract: {
+      id: "contract principal",
+    },
+  }
+  expect(clarity.txSender()).toEqual("transaction sender")
+  expect(clarity.asContract(() => clarity.txSender())).toEqual("contract principal")
+  expect(clarity.txSender()).toEqual("transaction sender")
 })
 
 test('asMaxLen', () => {
@@ -73,7 +88,7 @@ test('blockHeight for SmartWeave', () => {
     block: {
       height: 42,
     },
-  };
+  }
   expect(clarity.blockHeight()).toBe(42)
 })
 
@@ -107,7 +122,7 @@ test('contractCaller for SmartWeave', () => {
     transaction: {
       owner: "contract-caller result",
     },
-  };
+  }
   expect(clarity.contractCaller()).toEqual("contract-caller result")
 })
 
@@ -371,7 +386,7 @@ test('txSender for SmartWeave', () => {
     transaction: {
       owner: "tx-sender result",
     },
-  };
+  }
   expect(clarity.txSender()).toEqual("tx-sender result")
 })
 

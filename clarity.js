@@ -21,6 +21,7 @@ function hash(algorithm, value) {
     }
     throw new TypeError();
 }
+const txSenderStack = [];
 export var SmartWeave = null;
 export class Panic extends Error {
     constructor(message) {
@@ -102,7 +103,16 @@ export function append(list, value) {
  * @link https://docs.blockstack.org/references/language-clarity#as-contract
  */
 export function asContract(expr) {
-    throw new Error("not implemented yet"); // TODO
+    if (SmartWeave) {
+        try {
+            txSenderStack.unshift(SmartWeave.contract.id);
+            return expr();
+        }
+        finally {
+            txSenderStack.shift();
+        }
+    }
+    throw new Error("as-contract not supported");
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#as-max-len
@@ -448,6 +458,9 @@ export function tuple(...pairs) {
  */
 export function txSender() {
     if (SmartWeave) {
+        if (txSenderStack.length > 0) {
+            return txSenderStack[0]; // see asContract()
+        }
         return SmartWeave.transaction.owner;
     }
     throw new Error("tx-sender not supported");

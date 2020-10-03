@@ -41,6 +41,8 @@ function hash(algorithm: string, value: buff | uint | int): buff {
   throw new TypeError()
 }
 
+const txSenderStack: Array<principal> = []
+
 export var SmartWeave: any = null
 
 export class Panic<T> extends Error {
@@ -135,7 +137,16 @@ export function append<T>(list: list<T>, value: T): list<T> {
  * @link https://docs.blockstack.org/references/language-clarity#as-contract
  */
 export function asContract<A>(expr: expr<A>): A {
-  throw new Error("not implemented yet")  // TODO
+  if (SmartWeave) {
+    try {
+      txSenderStack.unshift(SmartWeave.contract.id)
+      return expr()
+    }
+    finally {
+      txSenderStack.shift()
+    }
+  }
+  throw new Error("as-contract not supported")
 }
 
 /**
@@ -528,6 +539,9 @@ export function tuple(...pairs: Array<any>[]): tuple {
  */
 export function txSender(): principal {
   if (SmartWeave) {
+    if (txSenderStack.length > 0) {
+      return txSenderStack[0]  // see asContract()
+    }
     return SmartWeave!.transaction.owner
   }
   throw new Error("tx-sender not supported")
