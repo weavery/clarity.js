@@ -43,7 +43,7 @@ Clarity | Type | TypeScript | Status | Notes
 [`append`](https://docs.blockstack.org/references/language-clarity#append) | function | `append()` | ✅ |
 [`as-contract`](https://docs.blockstack.org/references/language-clarity#as-contract) | syntax | `asContract<A>()` | ⓐ |
 [`as-max-len?`](https://docs.blockstack.org/references/language-clarity#as-max-len) | syntax | `asMaxLen<T>()` | ✅ |
-[`at-block`](https://docs.blockstack.org/references/language-clarity#at-block) | syntax | `atBlock<A>()` | 🚧 |
+[`at-block`](https://docs.blockstack.org/references/language-clarity#at-block) | syntax | `atBlock<A>()` | ❌ |
 [`block-height`](https://docs.blockstack.org/references/language-clarity#block-height) | keyword | `blockHeight()` | ⓐ |
 [`concat`](https://docs.blockstack.org/references/language-clarity#concat) | function | `concat()` | ✅ |
 [`contract-call?`](https://docs.blockstack.org/references/language-clarity#contract-call) | function | `contractCall<A, B>()` | 🚧 |
@@ -57,7 +57,7 @@ Clarity | Type | TypeScript | Status | Notes
 [`ft-mint?`](https://docs.blockstack.org/references/language-clarity#ft-mint) | function | `ftMint()` | 🚧 |
 [`ft-transfer?`](https://docs.blockstack.org/references/language-clarity#ft-transfer) | function | `ftTransfer()` | 🚧 |
 [`get`](https://docs.blockstack.org/references/language-clarity#get) | function | `get<T>()` | ✅ |
-[`get-block-info?`](https://docs.blockstack.org/references/language-clarity#get-block-info) | function | `getBlockInfo()` | 🚧 |
+[`get-block-info?`](https://docs.blockstack.org/references/language-clarity#get-block-info) | function | `getBlockInfo()` | ❌ |
 [`hash160`](https://docs.blockstack.org/references/language-clarity#hash160) | function | `hash160()` | ✅ |
 [`is-eq`](https://docs.blockstack.org/references/language-clarity#is-eq) | function | `isEq()` | ✅ |
 [`is-err`](https://docs.blockstack.org/references/language-clarity#is-err) | function | `isErr()` | ✅ |
@@ -96,4 +96,4 @@ Clarity | Type | TypeScript | Status | Notes
 [`unwrap-panic`](https://docs.blockstack.org/references/language-clarity#unwrap-panic) | function | `unwrapPanic<A, B>()` | ✅ |
 [`xor`](https://docs.blockstack.org/references/language-clarity#xor) | function | `xor()` | ✅ |
 
-**Legend**: 🚧 = work in progress. ✅ = supported. ⓐ = supported on Arweave.
+**Legend**: ❌ = not supported. 🚧 = work in progress. ✅ = supported. ⓐ = supported on Arweave.

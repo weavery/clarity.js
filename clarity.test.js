@@ -78,7 +78,7 @@ test('asMaxLen', () => {
 })
 
 test('atBlock', () => {
-  // TODO
+  // not supported
 })
 
 test('blockHeight', () => {
@@ -172,7 +172,7 @@ test('get', () => {
 })
 
 test('getBlockInfo', () => {
-  // TODO
+  // not supported
 })
 
 test('hash160(0)', () => {

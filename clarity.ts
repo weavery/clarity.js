@@ -160,7 +160,7 @@ export function asMaxLen<T extends Seq>(value: T, length: uint): optional<T> {
  * @link https://docs.blockstack.org/references/language-clarity#at-block
  */
 export function atBlock<A>(blockHash: buff, expr: expr<A>): A {
-  throw new Error("not implemented yet")  // TODO
+  throw new Error("at-block not supported")
 }
 
 /**
@@ -279,7 +279,7 @@ export function get<T>(keyName: string, tuple: tuple | optional<tuple>): T | opt
  * @link https://docs.blockstack.org/references/language-clarity#get-block-info
  */
 export function getBlockInfo(propName: string, blockHeight: uint): optional<buff> | optional<uint> {
-  throw new Error("not implemented yet")  // TODO
+  throw new Error("get-block-info? not supported")
 }
 
 /**

@@ -164,7 +164,7 @@ exports.asMaxLen = asMaxLen;
  * @link https://docs.blockstack.org/references/language-clarity#at-block
  */
 function atBlock(blockHash, expr) {
-    throw new Error("not implemented yet"); // TODO
+    throw new Error("at-block not supported");
 }
 exports.atBlock = atBlock;
 /**
@@ -283,7 +283,7 @@ exports.get = get;
  * @link https://docs.blockstack.org/references/language-clarity#get-block-info
  */
 function getBlockInfo(propName, blockHeight) {
-    throw new Error("not implemented yet"); // TODO
+    throw new Error("get-block-info? not supported");
 }
 exports.getBlockInfo = getBlockInfo;
 /**
