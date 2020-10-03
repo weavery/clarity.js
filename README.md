@@ -95,3 +95,5 @@ Clarity | Type | TypeScript | Status | Notes
 [`unwrap-err-panic`](https://docs.blockstack.org/references/language-clarity#unwrap-err-panic) | function | `unwrapErrPanic<A, B>()` | ✅ |
 [`unwrap-panic`](https://docs.blockstack.org/references/language-clarity#unwrap-panic) | function | `unwrapPanic<A, B>()` | ✅ |
 [`xor`](https://docs.blockstack.org/references/language-clarity#xor) | function | `xor()` | ✅ |
+
+**Legend**: 🚧 = work in progress. ✅ = supported. ⓐ = supported on Arweave.
