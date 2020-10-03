@@ -529,7 +529,10 @@ exports.tuple = tuple;
  * @link https://docs.blockstack.org/references/language-clarity#tx-sender
  */
 function txSender() {
-    throw new Error("not implemented yet"); // TODO
+    if (exports.SmartWeave) {
+        return exports.SmartWeave.transaction.owner;
+    }
+    throw new Error("tx-sender not supported");
 }
 exports.txSender = txSender;
 /**

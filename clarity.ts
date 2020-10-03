@@ -524,7 +524,10 @@ export function tuple(...pairs: Array<any>[]): tuple {
  * @link https://docs.blockstack.org/references/language-clarity#tx-sender
  */
 export function txSender(): principal {
-  throw new Error("not implemented yet")  // TODO
+  if (SmartWeave) {
+    return SmartWeave!.transaction.owner
+  }
+  throw new Error("tx-sender not supported")
 }
 
 /**

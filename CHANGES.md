@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Support for `blockHeight()` on SmartWeave.
+- Support for `txSender()` on SmartWeave.
 
 ## [0.1.1] - 2020-10-02
 

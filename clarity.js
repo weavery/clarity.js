@@ -444,7 +444,10 @@ export function tuple(...pairs) {
  * @link https://docs.blockstack.org/references/language-clarity#tx-sender
  */
 export function txSender() {
-    throw new Error("not implemented yet"); // TODO
+    if (SmartWeave) {
+        return SmartWeave.transaction.owner;
+    }
+    throw new Error("tx-sender not supported");
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#unwrap
