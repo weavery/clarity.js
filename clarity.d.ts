@@ -13,6 +13,7 @@ declare type uint = number;
 interface Seq {
     length: uint;
 }
+export declare var SmartWeave: any;
 export declare class Panic<T> extends Error {
     constructor(message: string);
 }

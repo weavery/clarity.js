@@ -23,7 +23,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.xor = exports.unwrapPanic = exports.unwrapErrPanic = exports.unwrapErr = exports.unwrap = exports.txSender = exports.tuple = exports.tryUnwrap = exports.toUint = exports.toInt = exports.some = exports.sha512_256 = exports.sha512 = exports.sha256 = exports.print = exports.pow = exports.ok = exports.not = exports.none = exports.nftTransfer = exports.nftMint = exports.nftGetOwner = exports.mod = exports.mapSet = exports.mapInsert = exports.mapGet = exports.mapDelete = exports.map = exports.list = exports.len = exports.keccak256 = exports.isSome = exports.isOk = exports.isNone = exports.isErr = exports.isEq = exports.hash160 = exports.getBlockInfo = exports.get = exports.ftTransfer = exports.ftMint = exports.ftGetBalance = exports.fold = exports.filter = exports.err = exports.defaultTo = exports.contractOf = exports.contractCaller = exports.contractCall = exports.concat = exports.blockHeight = exports.atBlock = exports.asMaxLen = exports.asContract = exports.append = exports.ge = exports.gt = exports.le = exports.lt = exports.div = exports.mul = exports.sub = exports.add = exports.requireFeature = exports.requireVersion = exports.Err = exports.Panic = void 0;
+exports.xor = exports.unwrapPanic = exports.unwrapErrPanic = exports.unwrapErr = exports.unwrap = exports.txSender = exports.tuple = exports.tryUnwrap = exports.toUint = exports.toInt = exports.some = exports.sha512_256 = exports.sha512 = exports.sha256 = exports.print = exports.pow = exports.ok = exports.not = exports.none = exports.nftTransfer = exports.nftMint = exports.nftGetOwner = exports.mod = exports.mapSet = exports.mapInsert = exports.mapGet = exports.mapDelete = exports.map = exports.list = exports.len = exports.keccak256 = exports.isSome = exports.isOk = exports.isNone = exports.isErr = exports.isEq = exports.hash160 = exports.getBlockInfo = exports.get = exports.ftTransfer = exports.ftMint = exports.ftGetBalance = exports.fold = exports.filter = exports.err = exports.defaultTo = exports.contractOf = exports.contractCaller = exports.contractCall = exports.concat = exports.blockHeight = exports.atBlock = exports.asMaxLen = exports.asContract = exports.append = exports.ge = exports.gt = exports.le = exports.lt = exports.div = exports.mul = exports.sub = exports.add = exports.requireFeature = exports.requireVersion = exports.Err = exports.Panic = exports.SmartWeave = void 0;
 const crypto = __importStar(require("crypto"));
 const keccak_1 = __importDefault(require("keccak"));
 function hash(algorithm, value) {
@@ -46,6 +46,7 @@ function hash(algorithm, value) {
     }
     throw new TypeError();
 }
+exports.SmartWeave = null;
 class Panic extends Error {
     constructor(message) {
         super(message);
@@ -160,7 +161,10 @@ exports.atBlock = atBlock;
  * @link https://docs.blockstack.org/references/language-clarity#block-height
  */
 function blockHeight() {
-    return 0; // TODO
+    if (exports.SmartWeave) {
+        return exports.SmartWeave.block.height;
+    }
+    throw new Error("block-height not supported");
 }
 exports.blockHeight = blockHeight;
 /**

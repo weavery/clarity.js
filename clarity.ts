@@ -41,6 +41,8 @@ function hash(algorithm: string, value: buff | uint | int): buff {
   throw new TypeError()
 }
 
+export var SmartWeave: any = null
+
 export class Panic<T> extends Error {
   public constructor(message: string) {
     super(message)
@@ -154,7 +156,10 @@ export function atBlock<A>(blockHash: buff, expr: expr<A>): A {
  * @link https://docs.blockstack.org/references/language-clarity#block-height
  */
 export function blockHeight(): uint {
-  return 0  // TODO
+  if (SmartWeave) {
+    return SmartWeave!.block.height
+  }
+  throw new Error("block-height not supported")
 }
 
 /**

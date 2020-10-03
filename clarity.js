@@ -21,6 +21,7 @@ function hash(algorithm, value) {
     }
     throw new TypeError();
 }
+export var SmartWeave = null;
 export class Panic extends Error {
     constructor(message) {
         super(message);
@@ -119,7 +120,10 @@ export function atBlock(blockHash, expr) {
  * @link https://docs.blockstack.org/references/language-clarity#block-height
  */
 export function blockHeight() {
-    return 0; // TODO
+    if (SmartWeave) {
+        return SmartWeave.block.height;
+    }
+    throw new Error("block-height not supported");
 }
 /**
  * @link https://docs.blockstack.org/references/language-clarity#concat
