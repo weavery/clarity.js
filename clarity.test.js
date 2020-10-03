@@ -64,8 +64,11 @@ test('asContract for SmartWeave', () => {
       id: "contract principal",
     },
   }
+  expect(clarity.contractCaller()).toEqual("transaction sender")
   expect(clarity.txSender()).toEqual("transaction sender")
+  expect(clarity.asContract(() => clarity.contractCaller())).toEqual("contract principal")
   expect(clarity.asContract(() => clarity.txSender())).toEqual("contract principal")
+  expect(clarity.contractCaller()).toEqual("transaction sender")
   expect(clarity.txSender()).toEqual("transaction sender")
 })
 

@@ -161,7 +161,7 @@ export function contractCall(contractName, functionName, ...args) {
  */
 export function contractCaller() {
     if (SmartWeave) {
-        return SmartWeave.transaction.owner;
+        return txSender();
     }
     throw new Error("contract-caller not supported");
 }

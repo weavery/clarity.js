@@ -201,7 +201,7 @@ export function contractCall<A, B>(contractName: trait, functionName: string, ..
  */
 export function contractCaller(): principal {
   if (SmartWeave) {
-    return SmartWeave!.transaction.owner
+    return txSender()
   }
   throw new Error("contract-caller not supported")
 }
