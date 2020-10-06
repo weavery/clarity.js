@@ -187,6 +187,10 @@ export declare function mapInsert(map: Map<tuple, tuple>, key: tuple, value: tup
  */
 export declare function mapSet(map: Map<tuple, tuple>, key: tuple, value: tuple): bool;
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#match
+ */
+export declare function match<T, E>(input: optional<T> | response<T, E>, okBranch: (_: T) => any, errBranch: (_: E) => any): any;
+/**
  * @link https://docs.blockstack.org/references/language-clarity#mod
  * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder
  */

@@ -271,6 +271,13 @@ test('mapSet', () => {
   expect(clarity.mapSet(names, key, val)).toEqual(true)
 })
 
+test('match', () => {
+  expect(clarity.match(clarity.none, ok => true, _ => false)).toEqual(false)
+  expect(clarity.match(clarity.some(1), ok => ok, _ => false)).toEqual(1)
+  expect(clarity.match(clarity.err(1), ok => ok, err => err)).toEqual(clarity.err(1))
+  expect(clarity.match(clarity.ok(1), ok => ok, err => err)).toEqual(clarity.ok(1))
+})
+
 test('mod', () => {
   expect(clarity.mod(2, 3)).toEqual(2)
   expect(clarity.mod(5, 2)).toEqual(1)

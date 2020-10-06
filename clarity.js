@@ -353,6 +353,15 @@ export function mapSet(map, key, value) {
     return true;
 }
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#match
+ */
+export function match(input, okBranch, errBranch) {
+    if (isNone(input) || isErr(input)) {
+        return errBranch(input);
+    }
+    return okBranch(input);
+}
+/**
  * @link https://docs.blockstack.org/references/language-clarity#mod
  * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder
  */

@@ -72,6 +72,7 @@ Clarity | Type | TypeScript | Status | Notes
 [`map-get?`](https://docs.blockstack.org/references/language-clarity#map-get) | function | `mapGet()` | ✅ |
 [`map-insert`](https://docs.blockstack.org/references/language-clarity#map-insert) | function | `mapInsert()` | ✅ |
 [`map-set`](https://docs.blockstack.org/references/language-clarity#map-set) | function | `mapSet()` | ✅ |
+[`match`](https://docs.blockstack.org/references/language-clarity#match) | syntax | `match<T, E>()` | ✅ |
 [`mod`](https://docs.blockstack.org/references/language-clarity#mod) | function | `mod()` | ✅ |
 [`nft-get-owner?`](https://docs.blockstack.org/references/language-clarity#nft-get-owner) | function | `nftGetOwner()` | 🚧 |
 [`nft-mint?`](https://docs.blockstack.org/references/language-clarity#nft-mint) | function | `nftMint()` | 🚧 |
@@ -96,4 +97,4 @@ Clarity | Type | TypeScript | Status | Notes
 [`unwrap-panic`](https://docs.blockstack.org/references/language-clarity#unwrap-panic) | function | `unwrapPanic<A, B>()` | ✅ |
 [`xor`](https://docs.blockstack.org/references/language-clarity#xor) | function | `xor()` | ✅ |
 
-**Legend**: ❌ = not supported. 🚧 = work in progress. ✅ = supported. ⓐ = supported on Arweave.
+**Legend**: ❌ = not supported. 🚧 = work in progress. ✅ = supported. ⓐ = supported on SmartWeave (Arweave).

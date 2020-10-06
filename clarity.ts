@@ -417,6 +417,16 @@ export function mapSet(map: Map<tuple, tuple>, key: tuple, value: tuple): bool {
 }
 
 /**
+ * @link https://docs.blockstack.org/references/language-clarity#match
+ */
+export function match<T, E>(input: optional<T> | response<T, E>, okBranch: (_: T) => any, errBranch: (_: E) => any): any {
+  if (isNone(input) || isErr(input)) {
+    return errBranch(input)
+  }
+  return okBranch(input)
+}
+
+/**
  * @link https://docs.blockstack.org/references/language-clarity#mod
  * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder
  */
