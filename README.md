@@ -16,17 +16,20 @@ project as part of the development of [Sworn].
 
 ### Mapping of Clarity types
 
-Clarity | Type | TypeScript | JavaScript | Notes
-------- | ---- | ---------- | ---------- | -----
-[`bool`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | class | `boolean` | `boolean` |
-[`buff`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | class | `Uint8Array` | `Uint8Array` |
-[`err`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | class | `Err<T>` | `Err` |
-[`int`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | class | `number` or `bigint` | `number` or `BigInt` |
-[`uint`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | class | `number` or `bigint` | `number` or `BigInt` |
-[`(list N T)`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | class | `Array<T>` | `Array` |
-[`(optional T)`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | - | `T` or `null` | `T` or `null` |
-[`(response T E)`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | - | `T` or `Err<E>` | `T` or `Err` |
-[`(tuple ...)`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | class | `Map<String, any>` | `Map` |
+Clarity | TypeScript | JavaScript | Notes
+------- | ---------- | ---------- | -----
+[`bool`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | `boolean` | `boolean` |
+[`(buff N)`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | `Uint8Array` | `Uint8Array` |
+[`err`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | `Err<T>` | `Err` |
+[`int`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | `number` or `bigint` | `number` or `BigInt` |
+[`(list N T)`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | `Array<T>` | `Array` |
+[`(optional T)`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | `T` or `null` | `T` or `null` |
+[`principal`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | `String` | `String` |
+[`(response T E)`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | `T` or `Err<E>` | `T` or `Err` |
+[`(string-ascii N)`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | `String` | `String` |
+[`(string-utf8 N)`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | `String` | `String` |
+[`(tuple ...)`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | `Map<String, any>` | `Map` |
+[`uint`](https://docs.blockstack.org/references/language-clarity#clarity-type-system) | `number` or `bigint` | `number` or `BigInt` |
 
 ### Supported Clarity features
 
