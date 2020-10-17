@@ -5,9 +5,7 @@
     "strict": true,
     "skipLibCheck": true,
     "baseUrl": ".",
-    "paths": {
-      "keccak": ["node_modules/keccak/lib"]
-    }
+    "paths": {}
   },
   "files": ["clarity.ts"]
 }

@@ -1,6 +1,4 @@
 /* This is free and unencumbered software released into the public domain. */
-import * as crypto from "crypto";
-import createKeccakHash from "keccak";
 function hash(algorithm, value) {
     if (Number.isInteger(value)) {
         let buff = new Uint8Array(16); // 128 bits
@@ -12,10 +10,10 @@ function hash(algorithm, value) {
         let buffer = null;
         switch (algorithm) {
             case 'keccak256':
-                buffer = createKeccakHash('keccak256').update(Buffer.from(value)).digest();
-                break;
+                throw new Error("not implemented yet"); // TODO
             default:
-                buffer = crypto.createHash(algorithm).update(value).digest();
+                throw new Error("not implemented yet"); // TODO
+            //buffer = crypto.createHash(algorithm).update(value).digest()
         }
         return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength);
     }
@@ -254,9 +252,10 @@ export function hash160(value) {
         value = buff;
     }
     if (value instanceof Uint8Array) {
-        const sha256 = crypto.createHash('sha256').update(value).digest();
-        const buffer = crypto.createHash('ripemd160').update(sha256).digest();
-        return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength);
+        throw new Error("not implemented yet"); // TODO
+        //const sha256 = crypto.createHash('sha256').update(value).digest()
+        //const buffer = crypto.createHash('ripemd160').update(sha256).digest()
+        //return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength)
     }
     throw new TypeError();
 }

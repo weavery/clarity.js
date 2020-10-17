@@ -61,13 +61,13 @@ Clarity | Type | TypeScript | Status | Notes
 [`ft-transfer?`](https://docs.blockstack.org/references/language-clarity#ft-transfer) | function | `ftTransfer()` | 🚧 |
 [`get`](https://docs.blockstack.org/references/language-clarity#get) | function | `get<T>()` | ✅ |
 [`get-block-info?`](https://docs.blockstack.org/references/language-clarity#get-block-info) | function | `getBlockInfo()` | ❌ | Not supported by SmartWeave.
-[`hash160`](https://docs.blockstack.org/references/language-clarity#hash160) | function | `hash160()` | ✅ |
+[`hash160`](https://docs.blockstack.org/references/language-clarity#hash160) | function | `hash160()` | ❌ |
 [`is-eq`](https://docs.blockstack.org/references/language-clarity#is-eq) | function | `isEq()` | ✅ |
 [`is-err`](https://docs.blockstack.org/references/language-clarity#is-err) | function | `isErr()` | ✅ |
 [`is-none`](https://docs.blockstack.org/references/language-clarity#is-none) | function | `isNone()` | ✅ |
 [`is-ok`](https://docs.blockstack.org/references/language-clarity#is-ok) | function | `isOk()` | ✅ |
 [`is-some`](https://docs.blockstack.org/references/language-clarity#is-some) | function | `isSome()` | ✅ |
-[`keccak256`](https://docs.blockstack.org/references/language-clarity#keccak256) | function | `keccak256()` | ✅ |
+[`keccak256`](https://docs.blockstack.org/references/language-clarity#keccak256) | function | `keccak256()` | ❌ |
 [`len`](https://docs.blockstack.org/references/language-clarity#len) | function | `len<T>()` | ✅ |
 [`list`](https://docs.blockstack.org/references/language-clarity#list) | function | `list<T>()` | ✅ |
 [`map`](https://docs.blockstack.org/references/language-clarity#map) | function | `map<A, B>()` | ✅ |
@@ -85,9 +85,9 @@ Clarity | Type | TypeScript | Status | Notes
 [`ok`](https://docs.blockstack.org/references/language-clarity#ok) | function | `ok<T, E>()` | ✅ |
 [`pow`](https://docs.blockstack.org/references/language-clarity#pow) | function | `pow()` | ✅ |
 [`print`](https://docs.blockstack.org/references/language-clarity#print) | function | `print<T>()` | ✅ |
-[`sha256`](https://docs.blockstack.org/references/language-clarity#sha256) | function | `sha256()` | ✅ |
-[`sha512`](https://docs.blockstack.org/references/language-clarity#sha512) | function | `sha512()` | ✅ |
-[`sha512/256`](https://docs.blockstack.org/references/language-clarity#sha512256) | function | `sha512_256()` | ✅ |
+[`sha256`](https://docs.blockstack.org/references/language-clarity#sha256) | function | `sha256()` | ❌ |
+[`sha512`](https://docs.blockstack.org/references/language-clarity#sha512) | function | `sha512()` | ❌ |
+[`sha512/256`](https://docs.blockstack.org/references/language-clarity#sha512256) | function | `sha512_256()` | ❌ |
 [`some`](https://docs.blockstack.org/references/language-clarity#some) | function | `some()` | ✅ |
 [`to-int`](https://docs.blockstack.org/references/language-clarity#to-int) | function | `toInt()` | 🚧 |
 [`to-uint`](https://docs.blockstack.org/references/language-clarity#to-uint) | function | `toUint()` | 🚧 |

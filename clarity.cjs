@@ -1,31 +1,7 @@
 "use strict";
 /* This is free and unencumbered software released into the public domain. */
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.xor = exports.unwrapPanic = exports.unwrapErrPanic = exports.unwrapErr = exports.unwrap = exports.txSender = exports.tuple = exports.tryUnwrap = exports.toUint = exports.toInt = exports.some = exports.sha512_256 = exports.sha512 = exports.sha256 = exports.print = exports.pow = exports.ok = exports.not = exports.none = exports.nftTransfer = exports.nftMint = exports.nftGetOwner = exports.mod = exports.match = exports.mapSet = exports.mapInsert = exports.mapGet = exports.mapDelete = exports.map = exports.list = exports.len = exports.keccak256 = exports.isSome = exports.isOk = exports.isNone = exports.isErr = exports.isEq = exports.hash160 = exports.getBlockInfo = exports.get = exports.ftTransfer = exports.ftMint = exports.ftGetBalance = exports.fold = exports.filter = exports.err = exports.defaultTo = exports.contractOf = exports.contractCaller = exports.contractCall = exports.concat = exports.blockHeight = exports.atBlock = exports.asMaxLen = exports.asContract = exports.append = exports.ge = exports.gt = exports.le = exports.lt = exports.div = exports.mul = exports.sub = exports.add = exports.requireFeature = exports.requireVersion = exports.Err = exports.Panic = exports.SmartWeave = void 0;
-const crypto = __importStar(require("crypto"));
-const keccak_1 = __importDefault(require("keccak"));
 function hash(algorithm, value) {
     if (Number.isInteger(value)) {
         let buff = new Uint8Array(16); // 128 bits
@@ -37,10 +13,10 @@ function hash(algorithm, value) {
         let buffer = null;
         switch (algorithm) {
             case 'keccak256':
-                buffer = keccak_1.default('keccak256').update(Buffer.from(value)).digest();
-                break;
+                throw new Error("not implemented yet"); // TODO
             default:
-                buffer = crypto.createHash(algorithm).update(value).digest();
+                throw new Error("not implemented yet"); // TODO
+            //buffer = crypto.createHash(algorithm).update(value).digest()
         }
         return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength);
     }
@@ -309,9 +285,10 @@ function hash160(value) {
         value = buff;
     }
     if (value instanceof Uint8Array) {
-        const sha256 = crypto.createHash('sha256').update(value).digest();
-        const buffer = crypto.createHash('ripemd160').update(sha256).digest();
-        return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength);
+        throw new Error("not implemented yet"); // TODO
+        //const sha256 = crypto.createHash('sha256').update(value).digest()
+        //const buffer = crypto.createHash('ripemd160').update(sha256).digest()
+        //return new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength)
     }
     throw new TypeError();
 }
